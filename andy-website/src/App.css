@@ -73,7 +73,11 @@ img.bg {
   padding: 20px 30px;
   text-decoration: none;
   font-size: 20px;
-  width: 50%;
+  min-width: 45%;
+}
+
+.links li {
+  display: inline;
 }
 
 .links a {
@@ -81,11 +85,11 @@ img.bg {
 }
 
 
-.Navbar a.active {
+.links a.active {
   background-color: #1C2124;
 }
 
-.Navbar a:hover {
+.links a:hover {
   background-color: #ddd;
   color: black;
 }
