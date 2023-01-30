@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  background-color: #1C2124;
+  /* background-color: #1C2124; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -13,20 +13,73 @@
   color: white;
   font-family: "Lato", "Montserrat", sans-serif;
 }
+
+.App-header h1 {
+  margin: 0px;
+}
+
+.home {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  justify-content: center;
+  font-size: calc(20px + 2vmin);
+  color: white;
+  font-family: "Lato", "Montserrat", sans-serif;
+  max-height: 50%;
+  align-items: center;
+  background: rgba(7, 20, 20, 0.6);
+  margin: 0px;
+}
+
+img.bg {
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 540px;
+	
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+	
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  filter: blur(8px);
+}
+
+@media screen and (max-width: 540px) { /* Specific to this particular image */
+  img.bg {
+    left: 50%;
+    margin-left: -540px;   /* 50% */
+  }
+}
+
+
 .Navbar {
-  background-color: #288FC7;
+  background: rgba(7, 20, 20, 0.6);
   overflow: hidden;
   position: relative;
 }
 
-.Navbar a {
-  float: left;
+.links {
+  display: inline-block;
+  margin: auto; 
   color: white;
   text-align: center;
-  padding: 16px 16px;
+  padding: 20px 30px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 20px;
+  width: 50%;
 }
+
+.links a {
+  padding: 20px 30px;
+}
+
 
 .Navbar a.active {
   background-color: #1C2124;
@@ -38,9 +91,10 @@
 }
 
 .logo {
+  top: 12.5%;
+  left: 0;
   position: absolute;
-  height: 100%;
-  right: 0px;
+  height: 75%;
 }
 
 
