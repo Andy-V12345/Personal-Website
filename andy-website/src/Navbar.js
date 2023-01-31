@@ -10,6 +10,7 @@ function Navbar() {
         {'name': 'Contacts', 'isActive': false}
     ]
     const [actives, setActive] = React.useState(activeStates)
+    const [scrolled, setScrolled] = React.useState(false)
 
     function changeStates(index) {
         for (let i = 0; i < activeStates.length; i++) {
@@ -21,9 +22,20 @@ function Navbar() {
         setActive(activeStates)
     }
 
+    function setFixed() {
+        if (window.scrollY > 425) {
+            setScrolled(true)
+        }
+        else {
+            setScrolled(false)
+        }
+    }
+
+    window.addEventListener("scroll", setFixed)
+
 
     return(
-        <div className='Navbar'>
+        <div className={scrolled ? 'navbar fixed' : 'navbar'}>
             <ul className='links'>
                 {actives.map((active, index) => (
                     <li key={active.name}>
@@ -37,5 +49,6 @@ function Navbar() {
         </div>
     )
 }
+
 
 export default Navbar;
