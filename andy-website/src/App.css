@@ -4,12 +4,12 @@
 }
 
 
-.home {
+.Home {
   width: 100%;
   height: 100vh;
 }
 
-.home .header {
+.Home .header {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -35,7 +35,7 @@ img.bg {
   color: #3DADAD;
 }
 
-.about {
+.About {
   position: relative;
   display: flex;
   background-color: #213333;
@@ -43,7 +43,68 @@ img.bg {
   color: white;
 }
 
-.about .header {
+.About .header {
+  position: absolute;
+  width: 50%;
+  text-align: center;
+  padding: 100px 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: calc(20px + 2vmin);
+}
+
+.divider {
+  width: 75%;
+  background-color: #A2FAFA;
+  border: none;
+  height: 2px;
+}
+
+.skills-txt {
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 100vh;
+}
+
+.skills-txt .divider {
+  width: 50%;
+  background-color: #57FAFA;
+  border: none;
+  height: 2px;
+}
+
+.skillbox {
+  background-color: rgba(7,20,20, 0.6);
+  width: 50%;
+  border-radius: 10px;
+  padding: 25px 50px;
+  margin: 20px auto;
+}
+
+.skillbox p {
+  text-align: center;
+}
+
+.skillbox h2 {
+  color: #3DADAD;
+}
+
+.skillbox hr {
+  width: 75%;
+}
+
+.Skills {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  color: white;
+}
+
+.Skills .header {
   position: absolute;
   width: 50%;
   text-align: center;

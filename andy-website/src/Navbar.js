@@ -7,28 +7,38 @@ function Navbar() {
         {'name': 'Home', 'isActive': true},
         {'name': 'About Me', 'isActive': false},
         {'name': 'My Skills', 'isActive': false},
+        {'name': 'My Projects', 'isActive': false},
         {'name': 'Contacts', 'isActive': false}
     ]
+
+
     const [actives, setActive] = React.useState(activeStates)
     const [scrolled, setScrolled] = React.useState(false)
 
     function changeStates(index) {
         for (let i = 0; i < activeStates.length; i++) {
-            if (activeStates[i].isActive) {
+            if (i != index) {
                 activeStates[i].isActive = false
             }
+            else {
+                activeStates[i].isActive = true
+            }
         }
-        activeStates[index].isActive = true;
         setActive(activeStates)
     }
 
     function setFixed() {
-        if (window.scrollY > 425) {
+        var scrolledY = window.scrollY
+        if (scrolledY > 425) {
             setScrolled(true)
         }
         else {
             setScrolled(false)
         }
+
+        var sectionIndex = Math.floor(scrolledY / window.innerHeight)
+        changeStates(sectionIndex)
+
     }
 
     window.addEventListener("scroll", setFixed)
