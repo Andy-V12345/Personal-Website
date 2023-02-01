@@ -1,6 +1,7 @@
 import './App.css';
 import Navbar from './Navbar.js';
 import SkillBox from './SkillBox';
+import ResumeButton from './ResumeButton';
 
 function App() {
   return (
@@ -62,7 +63,10 @@ function App() {
         </div>
         <div className='right-container'>
           <div className='header'>
-            <h1>My Skills</h1>
+            <div className='header-container'>
+              <h1>My Skills</h1>
+              <ResumeButton />
+            </div>
           </div>
         </div>
       </div>
