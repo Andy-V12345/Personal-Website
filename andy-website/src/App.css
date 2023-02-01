@@ -31,6 +31,10 @@ img.bg {
   filter: blur(8px);
 }
 
+.special-color {
+  color: #3DADAD;
+}
+
 .about {
   position: relative;
   display: flex;
@@ -40,31 +44,44 @@ img.bg {
 }
 
 .about .header {
-  margin: auto;
   position: absolute;
   width: 50%;
   text-align: center;
-  border: 2px solid blue;
   padding: 100px 0;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-size: calc(20px + 2vmin);
 }
 
-.about .right-container {
+.right-container {
   position: relative;
   display: table;
-  border: 2px solid green;
   width: 50%;
   height: 100vh;
 }
 
-.about .left-container {
+.left-container {
   position: relative;
   display: table;
-  border: 2px solid red;
   width: 50%;
   height: 100vh;
+}
+
+.about-txt {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.about-txt div {
+  padding: 25px;
+  margin: auto;
+}
+
+.right-container p {
+  text-align: left;
+  font-size: calc(10px + 2vmin);
 }
 
 .navbar {
@@ -100,6 +117,8 @@ img.bg {
 
 .links a {
   padding: 20px 30px;
+  text-decoration: none;
+  color: inherit;
 }
 
 

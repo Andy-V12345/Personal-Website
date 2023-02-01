@@ -39,7 +39,7 @@ function Navbar() {
             <ul className='links'>
                 {actives.map((active, index) => (
                     <li key={active.name}>
-                        <a onClick={() => changeStates(index)} className={active.isActive ? 'active' : ''}>
+                        <a href={`#${active.name}`} onClick={() => changeStates(index)} className={active.isActive ? 'active' : ''}>
                             <strong>{active.name}</strong>
                         </a>
                     </li>
