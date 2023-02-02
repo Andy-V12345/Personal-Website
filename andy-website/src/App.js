@@ -2,6 +2,7 @@ import './App.css';
 import Navbar from './Navbar.js';
 import SkillBox from './SkillBox';
 import ResumeButton from './ResumeButton';
+import ProjectBox from './ProjectBox';
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
       <div id='Home' className='container Home'>
         <img className='bg' src='northwestern-background.jpeg' alt='background' />
         
-        <div className='header'>
+        <div className='home-header'>
           <h1>Hello, I'm Andy!</h1>
           <h4>Software Engineer at Northwestern</h4>
         </div>
@@ -67,6 +68,21 @@ function App() {
               <h1>My Skills</h1>
               <ResumeButton />
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div id='My Projects' className='container Projects'>
+        <div className='left-container'>
+          <div className='header'>
+            <h1>My Projects</h1>
+          </div>
+        </div>
+        <div className='right-container'>
+          <div className='projects-container'>
+            <ProjectBox image='poker.png' title='Poker Simulator'>Skills used: Python</ProjectBox>
+            <ProjectBox image='weather.jpeg' title='Weather App'>Skills used: Swift, SwiftUI, XCode</ProjectBox>
+            <ProjectBox image='LLL.png' title='Linked List Library'>Skills used: Python</ProjectBox>
           </div>
         </div>
       </div>
