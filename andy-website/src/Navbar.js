@@ -8,7 +8,7 @@ function Navbar() {
         {'name': 'About Me', 'isActive': false},
         {'name': 'My Skills', 'isActive': false},
         {'name': 'My Projects', 'isActive': false},
-        {'name': 'Contacts', 'isActive': false}
+        {'name': 'Contact', 'isActive': false}
     ]
 
 

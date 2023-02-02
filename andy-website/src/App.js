@@ -3,6 +3,7 @@ import Navbar from './Navbar.js';
 import SkillBox from './SkillBox';
 import ResumeButton from './ResumeButton';
 import ProjectBox from './ProjectBox';
+import ContactLink from './ContactLink';
 
 function App() {
   return (
@@ -86,6 +87,20 @@ function App() {
           </div>
         </div>
       </div>
+
+      <div id='Contact' className='container Contact'>
+        <div className='left'>
+          <h1>Available for <strong className='special-color'>Summer Internship</strong></h1>
+          <p>Have a cool project or question? Feel free to contact me.</p>
+        </div>
+        <div className='right'>
+          <ContactLink link='mailto:andyvu2026@u.northwestern.edu'>andyvu2026@u.northwestern.edu</ContactLink>
+          <ContactLink link='https://github.com/Andy-V12345'>GitHub</ContactLink>
+          <ContactLink link='https://www.linkedin.com/in/andyvu2026/'>LinkedIn</ContactLink>
+          <ContactLink link='https://www.instagram.com/andy.v.123/'>Instagram</ContactLink>
+        </div>
+      </div>
+
       <Navbar />
     </div>
     
