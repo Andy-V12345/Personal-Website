@@ -4,6 +4,11 @@ import SkillBox from './SkillBox';
 import ResumeButton from './ResumeButton';
 import ProjectBox from './ProjectBox';
 import ContactLink from './ContactLink';
+import AboutHeader from './AboutHeader';
+import SkillsHeader from './SkillsHeader';
+import ProjectsHeader from './ProjectsHeader';
+import ContactHeader from './ContactHeader';
+import HomeHeader from './HomeHeader';
 
 function App() {
   return (
@@ -12,16 +17,14 @@ function App() {
         <img className='bg' src='northwestern-background.jpeg' alt='background' />
         
         <div className='home-header'>
-          <h1>Hello, I'm Andy!</h1>
+          <HomeHeader />
           <h4>Software Engineer at Northwestern</h4>
         </div>
       </div>
       
       <div id='About Me' className='container About'>
         <div className='left-container'>
-          <div className='header'>
-            <h1>Who Am I?</h1>
-          </div>
+          <AboutHeader />
         </div>
         <div className='right-container'>
           <div className='about-txt'>
@@ -66,7 +69,7 @@ function App() {
         <div className='right-container'>
           <div className='header'>
             <div className='header-container'>
-              <h1>My Skills</h1>
+              <SkillsHeader />
               <ResumeButton />
             </div>
           </div>
@@ -76,7 +79,7 @@ function App() {
       <div id='My Projects' className='container Projects'>
         <div className='left-container'>
           <div className='header'>
-            <h1>My Projects</h1>
+            <ProjectsHeader />
           </div>
         </div>
         <div className='right-container'>
@@ -90,7 +93,7 @@ function App() {
 
       <div id='Contact' className='container Contact'>
         <div className='left'>
-          <h1>Available for <strong className='special-color'>Summer Internship</strong></h1>
+          <ContactHeader />
           <p>Have a cool project or question? Feel free to contact me.</p>
         </div>
         <div className='right'>

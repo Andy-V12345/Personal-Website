@@ -17,7 +17,7 @@ function Navbar() {
 
     function changeStates(index) {
         for (let i = 0; i < activeStates.length; i++) {
-            if (i != index) {
+            if (i !== index) {
                 activeStates[i].isActive = false
             }
             else {
@@ -36,7 +36,10 @@ function Navbar() {
             setScrolled(false)
         }
 
-        var sectionIndex = Math.floor(scrolledY / window.innerHeight)
+        var sectionIndex = Math.floor((scrolledY + 65) / window.innerHeight)
+        if (sectionIndex < 0) {
+            sectionIndex = 0
+        }
         changeStates(sectionIndex)
 
     }

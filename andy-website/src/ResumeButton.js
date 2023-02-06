@@ -8,8 +8,7 @@ function ResumeButton() {
         <button onMouseEnter={() => setButtonState('resume-hover')} 
                 onMouseLeave={() => setButtonState('resume')} 
                 className={buttonState}>
-            My Resume
-            {/* <a href="../Resume.pdf" type='application/pdf' target='_blank'>My Resume</a> */}
+            <a className='resumeLink' href="https://drive.google.com/file/d/1ZehCmz5QhYUrA66p4JbZd5qGr-Wjb5Wd/view?usp=sharing" target='_blank'>My Resume</a>
         </button>
     )
 }

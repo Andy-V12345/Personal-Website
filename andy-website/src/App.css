@@ -34,6 +34,12 @@ img.bg {
   color: #3DADAD;
 }
 
+.resumeLink {
+  color: white;
+  text-decoration: none;
+}
+
+
 .resume {
   background-color: #3DADAD;
   border: none;
@@ -87,13 +93,18 @@ img.bg {
 }
 
 .projects-container {
+  background: rgba(133, 204, 204, 0.2);
+  border-radius: 10px;
   position: absolute;
-  width: 100%;
+  width: 75%;
+  height: 80vh;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   max-height: 95vh;
   overflow-y: scroll;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 
@@ -150,6 +161,7 @@ img.bg {
   margin-top: 20px;
 }
 
+
 .left {
   width: 50%;
   height: 100%;
@@ -164,8 +176,9 @@ img.bg {
   font-size: calc(10px + 2vmin);
 }
 
-.left h1 {
+.left .contactHeader {
   font-size: calc(25px + 2vmin);
+  display: inline;
 }
 
 .right {
