@@ -14,7 +14,24 @@ import React from 'react';
 
 function App() {
 
-  const [isDescriptionVisible, setVisibility] = React.useState(() => false)
+  const visibilityStates = {
+    'poker': false,
+    'weather': false,
+    'LLL': false
+  }
+
+  const [isVisible, setVisibility] = React.useState(() => visibilityStates)
+  
+  function displayProject(id) {
+    visibilityStates[id] = true
+    setVisibility(visibilityStates)
+  }
+
+  function closeProject(id) {
+    visibilityStates[id] = false
+    setVisibility(visibilityStates)
+  }
+
 
   return (
     <div className='App'>
@@ -89,9 +106,21 @@ function App() {
         </div>
         <div className='right-container'>
           <div className='projects-container'>
-            <ProjectBox image='poker.png' title='Poker Simulator'>Skills used: Python</ProjectBox>
-            <ProjectBox image='weather.jpeg' title='Weather App'>Skills used: Swift, SwiftUI, XCode</ProjectBox>
-            <ProjectBox image='LLL.png' title='Linked List Library'>Skills used: Python</ProjectBox>
+            <ProjectBox onShow={() => displayProject('poker')} 
+              image='poker.png' 
+              title='Poker Simulator'>
+                Skills used: Python
+            </ProjectBox>
+            <ProjectBox onShow={() => displayProject('weather')}
+            image='weather.jpeg' 
+            title='Weather App'>
+              Skills used: Swift, SwiftUI, XCode
+            </ProjectBox>
+            <ProjectBox onShow={() => displayProject('LLL')}
+            image='LLL.png' 
+            title='Linked List Library'>
+              Skills used: Python
+            </ProjectBox>
           </div>
         </div>
       </div>
@@ -111,7 +140,23 @@ function App() {
   
       <Navbar />
 
-      <ProjectDescription className={isDescriptionVisible ? '' : 'hidden'}/>
+      <ProjectDescription id='poker' title='Poker Simulator' link='https://github.com/Andy-V12345/Poker' image='poker.png' visible={isVisible} onShow={closeProject}>
+        Developed a fully functional text-based poker program in python that allows the user to play against 
+        the computer using the terminal. The picture to the left is what the user would see in the middle of a round of poker.
+        I'm currently updating the program to add two more computer players to the game.
+      </ProjectDescription>
+
+      <ProjectDescription id='weather' title='Weather App' link='https://github.com/Andy-V12345/Weather-App' image='weather.jpeg' visible={isVisible} onShow={closeProject}>
+        Programmed a rough replica of the Apple Weather App that displays information on current weather conditions, the 12-hour
+        and weekly forecast, precipitation, humidity, and the wind. The data is pulled from the OpenWeather API and is parsed 
+        with Swift's Codable protocol. I also used Swift's CoreLocation library to access the user's location with their permission.
+      </ProjectDescription>
+
+      <ProjectDescription id='LLL' title='Linked List Library' link='https://github.com/Andy-V12345/Linked-List-Library' image='LLL.png' visible={isVisible} onShow={closeProject}>
+        Developed a Python library that provides 6 useful functionalities to linked lists. The library allows users to create a 
+        linked list from a normal list; more conveniently access, replace, insert and delete data from a linked list; and obtain
+        the length of the linked list.
+      </ProjectDescription>
 
     </div>
     
