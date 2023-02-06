@@ -1,7 +1,7 @@
-import React, { useState } from "react";
 import './App.css';
 import Typical from "react-typical";
 import useIsVisible from "./IsVisible";
+import React from 'react';
 
 function AboutHeader() {
 

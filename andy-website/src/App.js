@@ -1,7 +1,7 @@
 import './App.css';
 import Navbar from './Navbar.js';
 import SkillBox from './SkillBox';
-import ResumeButton from './ResumeButton';
+import BlueButton from './BlueButton';
 import ProjectBox from './ProjectBox';
 import ContactLink from './ContactLink';
 import AboutHeader from './AboutHeader';
@@ -9,8 +9,13 @@ import SkillsHeader from './SkillsHeader';
 import ProjectsHeader from './ProjectsHeader';
 import ContactHeader from './ContactHeader';
 import HomeHeader from './HomeHeader';
+import ProjectDescription from './ProjectDescription';
+import React from 'react';
 
 function App() {
+
+  const [isDescriptionVisible, setVisibility] = React.useState(() => false)
+
   return (
     <div className='App'>
       <div id='Home' className='container Home'>
@@ -70,7 +75,7 @@ function App() {
           <div className='header'>
             <div className='header-container'>
               <SkillsHeader />
-              <ResumeButton />
+              <BlueButton link='https://drive.google.com/file/d/1ZehCmz5QhYUrA66p4JbZd5qGr-Wjb5Wd/view?usp=sharing'>My Resume</BlueButton>
             </div>
           </div>
         </div>
@@ -103,8 +108,11 @@ function App() {
           <ContactLink link='https://www.instagram.com/andy.v.123/'>Instagram</ContactLink>
         </div>
       </div>
-
+  
       <Navbar />
+
+      <ProjectDescription className={isDescriptionVisible ? '' : 'hidden'}/>
+
     </div>
     
   );

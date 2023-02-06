@@ -34,13 +34,13 @@ img.bg {
   color: #3DADAD;
 }
 
-.resumeLink {
+.buttonLink {
   color: white;
   text-decoration: none;
 }
 
 
-.resume {
+.blueButton {
   background-color: #3DADAD;
   border: none;
   color: white;
@@ -51,7 +51,7 @@ img.bg {
   transition: .2s ease-in-out;
 }
 
-.resume-hover {
+.blueButton-hover {
   background-color: #3DADAD;
   border: none;
   color: white;
@@ -355,6 +355,73 @@ img.bg {
   height: 75%;
 }
 
+.project-description-container {
+  position: fixed;
+  background-color: #213333;
+  border-radius: 20px;
+  color: white;
+  width: 50%;
+  height: 60vh;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.project-image {
+  position: absolute;
+  height: 100%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  margin: 0px;
+  left: 0;
+}
+
+.description-container {
+  border-radius: 0 20px 20px 0;
+  position: absolute;
+  background-color: rgba(7,20,20);
+  padding: 0 20px;
+  height: 100%;
+  max-width: 60%;
+  right: 0;
+  text-align: left;
+}
+
+.FaTimes {
+  position: absolute;
+  margin-right: 30px;
+  right: 0;
+}
+
+.FaTimes.hover {
+  color: #3DADAD;
+}
+
+.description-container h3 {
+  font-size: calc(15px + 2vmin);
+  margin: calc(8px + 2vmin) 10px 0 10px;
+}
+
+.description-container p {
+  font-size: calc(5px + 2vmin);
+  margin: calc(8px + 2vmin) 10px 0 10px;
+}
+
+.description-container .blueButton-hover {
+  margin: calc(8px + 2vmin) 10px 0 10px;
+  padding: calc(7px + 2vmin) calc(10px + 2vmin);
+  font-size: calc(8px + 2vmin);
+}
+
+.description-container .blueButton {
+  margin: calc(8px + 2vmin) 10px 0 10px;
+  padding: calc(7px + 2vmin) calc(10px + 2vmin);
+  font-size: calc(8px + 2vmin);
+}
+
+.hidden {
+  visibility: hidden;
+}
 
 
 
