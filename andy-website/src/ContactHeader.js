@@ -11,7 +11,7 @@ function ContactHeader() {
     return (
         <h1 className='contactHeader' ref={ref}>
             Available for {` `}
-            {isVisible ? <Typical className='special-color contactHeader' steps={['Summer Internship', 3000]}/> : ''}
+            {isVisible ? <Typical className='special-color contactHeader' steps={['Summer Internships', 3000]}/> : ''}
         </h1>
     )
 }

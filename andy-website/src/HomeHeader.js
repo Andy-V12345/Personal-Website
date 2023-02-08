@@ -10,7 +10,7 @@ function HomeHeader() {
 
     return (
         <h1 ref={ref}>
-            {isVisible ? <Typical steps={[`Hello, I'm Andy!`, 3000]}/> : ''}
+            {isVisible ? <Typical steps={[`Hello, I'm Andy!`, 3000]}/> : <Typical steps={['', 3000]}/>}
         </h1>
     )
 }

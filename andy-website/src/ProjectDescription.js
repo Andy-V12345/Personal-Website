@@ -9,7 +9,8 @@ function ProjectDescription({id, visible, onShow, title, children, link, image})
 
     const handleClick = React.useCallback(() => {
         onShow(id)
-    }, [onShow])
+        
+    }, [onShow]) 
     
     return (
         <div onClick={handleClick} className={visible[id] ? 'background-container' : 'hidden'}>

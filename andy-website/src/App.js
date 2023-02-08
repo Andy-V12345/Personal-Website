@@ -11,8 +11,12 @@ import ContactHeader from './ContactHeader';
 import HomeHeader from './HomeHeader';
 import ProjectDescription from './ProjectDescription';
 import React from 'react';
+import NavCollapse from './NavCollapse';
+
 
 function App() {
+
+  
 
   const visibilityStates = {
     'poker': false,
@@ -31,13 +35,13 @@ function App() {
     visibilityStates[id] = false
     setVisibility(visibilityStates)
   }
-
+ 
+  
 
   return (
     <div className='App'>
       <div id='Home' className='container Home'>
         <img className='bg' src='northwestern-background.jpeg' alt='background' />
-        
         <div className='home-header'>
           <HomeHeader />
           <h4>Software Engineer at Northwestern</h4>
@@ -116,6 +120,7 @@ function App() {
             title='Weather App'>
               Skills used: Swift, SwiftUI, XCode
             </ProjectBox>
+          
             <ProjectBox onShow={() => displayProject('LLL')}
             image='LLL.png' 
             title='Linked List Library'>
@@ -138,7 +143,8 @@ function App() {
         </div>
       </div>
   
-      <Navbar />
+      <Navbar isFixed={false}/>
+      <NavCollapse />
 
       <ProjectDescription id='poker' title='Poker Simulator' link='https://github.com/Andy-V12345/Poker' image='poker.png' visible={isVisible} onShow={closeProject}>
         Developed a fully functional text-based poker program in python that allows the user to play against 

@@ -10,7 +10,7 @@ function SkillsHeader() {
 
     return (
         <h1 ref={ref}>
-            {isVisible ? <Typical steps={['My Skills', 3000]}/> : ''}
+            {isVisible ? <Typical steps={['My Skills', 3000]}/> : <Typical steps={['', 3000]}/>}
         </h1>
     )
 }
