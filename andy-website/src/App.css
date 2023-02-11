@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  background-color: #213333;
 }
 
 .Home {
@@ -18,6 +17,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 75%;
+  min-width: 50%;
   justify-content: center;
   font-size: calc(20px + 2vmin);
   color: white;
@@ -26,13 +26,11 @@
   max-height: 50%;
   align-items: center;
   background: rgba(7, 20, 20, 0.5);
-  margin: 0px;
 }
 
 img.bg {
   width: 100%;
   height: 100vh;
-  filter: blur(8px);
 }
 
 .special-color {
@@ -163,7 +161,6 @@ img.bg {
   height: 50vh;
   background: rgba(7,20,20);
   color: white;
-  margin-top: 20px;
 }
 
 
@@ -266,6 +263,7 @@ img.bg {
   position: relative;
   display: flex;
   color: white;
+  background-color: #213333;
 }
 
 
@@ -306,6 +304,7 @@ img.bg {
 
 .navbar {
   background: rgba(7, 20, 20, 0.8);
+  display: block;
   overflow: hidden;
   position: absolute;
   width: 100%;
@@ -313,21 +312,13 @@ img.bg {
   left: 0;
 }
 
-.nav.hidden {
-  background: rgba(7, 20, 20, 0.8);
-  overflow: hidden;
-  position: absolute;
-  width: 100%;
-  top: -100px;
-  left: 0;
-}
+
 
 .navbar.fixed {
   background: rgba(7, 20, 20);
   position: fixed;
   top: 0;
   width: 100%;
-  transition: top 1s;
 }
 
 .collapsed {

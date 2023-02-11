@@ -15,7 +15,6 @@ import NavCollapse from './NavCollapse';
 
 
 function App() {
-
   
 
   const visibilityStates = {
@@ -23,8 +22,19 @@ function App() {
     'weather': false,
     'LLL': false
   }
-
+ 
   const [isVisible, setVisibility] = React.useState(() => visibilityStates)
+  const [scrolled, setScrolled] = React.useState(() => false)
+
+  function hideNavbar() {
+    var scrolledY = window.scrollY
+    if (scrolledY >= window.innerHeight) {
+        setScrolled(true)
+    }
+    else {
+        setScrolled(false)
+    }
+  }
   
   function displayProject(id) {
     visibilityStates[id] = true
@@ -36,10 +46,12 @@ function App() {
     setVisibility(visibilityStates)
   }
  
+  window.addEventListener('scroll', hideNavbar)
   
 
   return (
     <div className='App'>
+      <Navbar isFixed={false}/>
       <div id='Home' className='container Home'>
         <img className='bg' src='northwestern-background.jpeg' alt='background' />
         <div className='home-header'>
@@ -47,7 +59,7 @@ function App() {
           <h4>Software Engineer at Northwestern</h4>
         </div>
       </div>
-      
+
       <div id='About Me' className='container About'>
         <div className='left-container'>
           <AboutHeader />
@@ -74,6 +86,7 @@ function App() {
           </div>
         </div>
       </div>
+  
 
       <div id='My Skills' className='container Skills'>
         <div className='left-container'>
@@ -131,7 +144,7 @@ function App() {
       </div>
 
       <div id='Contact' className='container Contact'>
-        <div className='left'>
+        <div className='left'> 
           <ContactHeader />
           <p>Have a cool project or question? Feel free to contact me.</p>
         </div>
@@ -142,9 +155,10 @@ function App() {
           <ContactLink link='https://www.instagram.com/andy.v.123/'>Instagram</ContactLink>
         </div>
       </div>
-  
-      <Navbar isFixed={false}/>
+
       <NavCollapse />
+
+  
 
       <ProjectDescription id='poker' title='Poker Simulator' link='https://github.com/Andy-V12345/Poker' image='poker.png' visible={isVisible} onShow={closeProject}>
         Developed a fully functional text-based poker program in python that allows the user to play against 

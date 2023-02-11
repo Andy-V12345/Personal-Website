@@ -11,7 +11,7 @@ function ProjectDescription({id, visible, onShow, title, children, link, image})
         onShow(id)
         
     }, [onShow]) 
-    
+     
     return (
         <div onClick={handleClick} className={visible[id] ? 'background-container' : 'hidden'}>
             <div className={visible[id] ? 'project-description-container' : 'hidden'}>

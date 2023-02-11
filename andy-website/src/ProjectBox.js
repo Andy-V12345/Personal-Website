@@ -3,7 +3,7 @@ import React from 'react';
 
 function ProjectBox({image, title, children, onShow}) {
     const [state, setState] = React.useState(() => '')
-    
+     
  
     return (
         <div onClick={onShow} onMouseEnter={() => setState('hover')} onMouseLeave={() => setState('')} id={state} className='projectbox'>
