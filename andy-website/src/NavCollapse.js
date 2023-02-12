@@ -1,9 +1,5 @@
 import React from "react";
 import { FaBars } from 'react-icons/fa';
-import Navbar from "./Navbar";
-import { slideInDown } from 'react-animations';
-import styled, { keyframes } from 'styled-components';
-import { animated, useSpring } from '@react-spring/web'
 
 function NavCollapse() {
 
