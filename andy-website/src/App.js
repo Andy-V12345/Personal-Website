@@ -24,15 +24,14 @@ function App() {
   }
  
   const [isVisible, setVisibility] = React.useState(() => visibilityStates)
-  const [scrolled, setScrolled] = React.useState(() => false)
+  const [show, setShow] = React.useState(() => false)
 
-  function hideNavbar() {
-    var scrolledY = window.scrollY
-    if (scrolledY >= window.innerHeight) {
-        setScrolled(true)
+  function toggleNav() {
+    if (show) {
+      setShow(false)
     }
     else {
-        setScrolled(false)
+      setShow(true)
     }
   }
   
@@ -46,12 +45,12 @@ function App() {
     setVisibility(visibilityStates)
   }
  
-  window.addEventListener('scroll', hideNavbar)
   
 
   return (
     <div className='App'>
       <Navbar isFixed={false}/>
+      
       <div id='Home' className='container Home'>
         <img className='bg' src='northwestern-background.jpeg' alt='background' />
         <div className='home-header'>
@@ -156,8 +155,8 @@ function App() {
         </div>
       </div>
 
-      <NavCollapse />
-
+      {show ? <Navbar isFixed={true}/> : null}
+      <NavCollapse showNav={toggleNav}/>
   
 
       <ProjectDescription id='poker' title='Poker Simulator' link='https://github.com/Andy-V12345/Poker' image='poker.png' visible={isVisible} onShow={closeProject}>

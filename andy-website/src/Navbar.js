@@ -19,24 +19,52 @@ function Navbar({isFixed}) {
         to: {x: 0},
     })
 
+    if (isFixed) {
+        return(
+            
+            <motion.div
+                initial={{opacity: 0}}
+                animate={{opacity: 1}}
+                transition={{ease: 'easeInOut', duration: 0.3}}
+                exit={{opacity: 0}}
+            >
+                <div className='navbar fixed'>
+                    <ul className='links'>
+                        {headers.map((header) => (
+                            <li key={header}>
+                                <a href={`#${header}`}>
+                                    <strong>{header}</strong>
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </motion.div>
+        )
+    } else {
+        return(
 
-    return(
-        
-        <motion.div
-            animate={{y: 30}}
-        >
-            <div className={isFixed ? 'navbar fixed' : 'navbar'}>
-                <ul className='links'>
-                    {headers.map((header) => (
-                        <li key={header}>
-                            <a href={`#${header}`}>
-                                <strong>{header}</strong>
-                            </a>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        </motion.div>
+            <motion.div
+                initial={{opacity: 0}}
+                animate={{y: 30, opacity: 1}}
+                transition={{ease: 'easeInOut', duration: 0.3}}
+            >
+                <div className='navbar'>
+                    <ul className='links'>
+                        {headers.map((header) => (
+                            <li key={header}>
+                                <a href={`#${header}`}>
+                                    <strong>{header}</strong>
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </motion.div>
+        )
+    }
+
+    
 
             // <animated.div style={{
             //     ...springs
@@ -54,8 +82,6 @@ function Navbar({isFixed}) {
             //         {isFixed ? null : <img className='logo' src={logo} alt='logo' />}
             //     </div>
             // </animated.div>
-       
-    )
     
 }
 

@@ -316,16 +316,15 @@ img.bg {
 
 
 .navbar.fixed {
-  background: rgba(7, 20, 20);
   position: fixed;
-  top: 0;
+  top: 30px;
   width: 100%;
 }
 
 .collapsed {
   height: 65px;
   position: fixed;
-  top: 0;
+  top: 30px;
   left: 0;
   color: white;
   padding: 0;
@@ -343,7 +342,7 @@ img.bg {
 .collapsed.hide {
   height: 65px;
   position: fixed;
-  top: 0;
+  top: 30px;
   left: 0;
   color: white;
   padding: 0;
@@ -373,6 +372,10 @@ img.bg {
   font-size: calc(6px + 1vw);
   background: rgba(7, 20, 20, 0.8);
   border-radius: 10px;
+}
+
+.navbar.fixed .links {
+  background: rgba(7, 20, 20);
 }
 
 .links li {
