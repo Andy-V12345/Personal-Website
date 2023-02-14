@@ -4,7 +4,7 @@ import React from 'react';
 import { animated, useSpring } from '@react-spring/web';
 import { motion } from 'framer-motion';
 
-function Navbar({isFixed}) {
+function Navbar({isFixed, hideNav}) {
 
     const headers = [
         "Home",
@@ -25,14 +25,13 @@ function Navbar({isFixed}) {
             <motion.div
                 initial={{opacity: 0}}
                 animate={{opacity: 1}}
-                transition={{ease: 'easeInOut', duration: 0.3}}
-                exit={{opacity: 0}}
+                transition={{ease: 'easeInOut', duration: 0.4}}
             >
                 <div className='navbar fixed'>
                     <ul className='links'>
                         {headers.map((header) => (
                             <li key={header}>
-                                <a href={`#${header}`}>
+                                <a href={`#${header}`} onClick={hideNav}>
                                     <strong>{header}</strong>
                                 </a>
                             </li>
@@ -45,9 +44,9 @@ function Navbar({isFixed}) {
         return(
 
             <motion.div
-                initial={{opacity: 0}}
+                initial={{opacity: 0, y: -40}}
                 animate={{y: 30, opacity: 1}}
-                transition={{ease: 'easeInOut', duration: 0.3}}
+                transition={{ease: 'easeInOut', duration: 0.4}}
             >
                 <div className='navbar'>
                     <ul className='links'>

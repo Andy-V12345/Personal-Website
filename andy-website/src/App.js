@@ -12,6 +12,7 @@ import HomeHeader from './HomeHeader';
 import ProjectDescription from './ProjectDescription';
 import React from 'react';
 import NavCollapse from './NavCollapse';
+import { motion } from 'framer-motion';
 
 
 function App() {
@@ -45,34 +46,36 @@ function App() {
       
       <div id='Home' className='container Home'>
         <img className='bg' src='northwestern-background.jpeg' alt='background' />
-        <div className='home-header'>
-          <HomeHeader />
-          <h4>Software Engineer at Northwestern</h4>
-        </div>
+        <motion.div initial={{opacity: 0, width: 0}} whileInView={{opacity: 1, width: "75%"}} transition={{duration: 0.3}} className='home-header'>
+          <div>
+            <HomeHeader />
+            <h4>Software Engineer at Northwestern</h4>
+          </div>
+        </motion.div>
       </div>
 
       <div id='About Me' className='container About'>
         <div className='left-container'>
           <AboutHeader />
-        </div>
+        </div> 
         <div className='right-container'>
           <div className='about-txt'>
             <div>
-              <p>
+              <motion.p initial={{x: 100, opacity: 0}} whileInView={{x: 0, opacity: 1}} transition={{type: "spring", delay: 0, duration: 0.4}}>
                 I'm a freshman <strong>computer science</strong> student at Northwestern University. My <strong>goal </strong> 
                 is to develop <strong>impactful</strong> software that is <strong>optimized</strong> to its fullest potential.
-              </p>
+              </motion.p>
             </div>
             <div>
-              <p>
+              <motion.p initial={{x: 100, opacity: 0}} whileInView={{x: 0, opacity: 1}} transition={{type: "spring", delay: 0, duration: 0.4}}>
                 Three words to describe me are <strong>optimistic, reliable, and determined</strong>. 
                 When I'm not poring over code, I like to problem solve on the chess board, hit on the tennis court, and adventure in a kayak.
-              </p>
+              </motion.p>
             </div>
             <div>
-              <p>
+              <motion.p initial={{x: 100, opacity: 0}} whileInView={{x: 0, opacity: 1}} transition={{type: "spring", delay: 0, duration: 0.4}}>
                 I'm excited to work with a dynamic and engaging team. <strong className='special-color'>Together, let's build greatness!</strong>
-              </p>
+              </motion.p>
             </div>
           </div>
         </div>
@@ -86,11 +89,11 @@ function App() {
               Well-versed in object-oriented programming languages such as 
               Python, Java, and C
             </SkillBox>
-            <hr className='divider'></hr>
+            <motion.hr initial={{opacity: 0, x: -500}} whileInView={{opacity: 1, x: 0}} className='divider'></motion.hr>
             <SkillBox title="iOS Development">
               Experienced with using Swift and XCode to develop and deploy mobile iOS applications
             </SkillBox>
-            <hr className='divider'></hr>
+            <motion.hr initial={{opacity: 0, x: -500}} whileInView={{opacity: 1, x: 0}} className='divider'></motion.hr>
             <SkillBox title="Front-End Development">
               Proficient with SwiftUI, UIKit, HTML, CSS, JavaScript, and the ReactJS framework
             </SkillBox>
@@ -113,7 +116,7 @@ function App() {
           </div>
         </div>
         <div className='right-container'>
-          <div className='projects-container'>
+          <motion.div initial={{opacity: 0, height: 0}} whileInView={{opacity: 1, height: "80vh"}} transition={{duration: 0.3, delay: 0}} className='projects-container'>
             <ProjectBox onShow={() => displayProject('poker')} 
               image='poker.png' 
               title='Poker Simulator'>
@@ -124,20 +127,20 @@ function App() {
             title='Weather App'>
               Skills used: Swift, SwiftUI, XCode
             </ProjectBox>
-          
+           
             <ProjectBox onShow={() => displayProject('LLL')}
             image='LLL.png' 
             title='Linked List Library'>
               Skills used: Python
             </ProjectBox>
-          </div>
+          </motion.div>
         </div>
       </div>
 
       <div id='Contact' className='container Contact'>
         <div className='left'> 
           <ContactHeader />
-          <p>Have a cool project or question? Feel free to contact me.</p>
+          <motion.p initial={{x: -200, opacity: 0}} whileInView={{x: 0, opacity: 1}} >Have a cool project or question? Feel free to contact me.</motion.p>
         </div>
         <div className='right'>
           <ContactLink link='mailto:andyvu2026@u.northwestern.edu'>andyvu2026@u.northwestern.edu</ContactLink>
@@ -147,7 +150,7 @@ function App() {
         </div>
       </div>
 
-      {show ? <Navbar isFixed={true}/> : null}
+      {show ? <Navbar isFixed={true} hideNav={() => setShow(false)}/> : null}
       <NavCollapse showNav={() => setShow(true)} hideNav={() => setShow(false)} isShown={show} />
   
 

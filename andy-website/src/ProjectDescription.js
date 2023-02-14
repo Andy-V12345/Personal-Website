@@ -9,7 +9,7 @@ function ProjectDescription({id, visible, onShow, title, children, link, image})
 
     const handleClick = React.useCallback(() => {
         onShow(id)
-        
+         
     }, [onShow]) 
      
     return (

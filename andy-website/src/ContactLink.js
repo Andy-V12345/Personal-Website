@@ -1,5 +1,6 @@
 import './App.css';
 import React from 'react';
+import { motion } from 'framer-motion';
 
 function ContactLink({link, children}) {
     
@@ -7,11 +8,11 @@ function ContactLink({link, children}) {
 
 
     return (
-        <div className='contact-link'>
+        <motion.div initial={{x: 200, opacity: 0}} whileInView={{x: 0, opacity: 1}} className='contact-link'>
             <span onMouseEnter={() => setState('hover')} onMouseLeave={() => setState('')} id={state} className='link-container'>
                 <a href={link} target='_blank'>{children}</a>
             </span>
-        </div>
+        </motion.div>
     )
 }
 
