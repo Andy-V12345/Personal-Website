@@ -26,14 +26,6 @@ function App() {
   const [isVisible, setVisibility] = React.useState(() => visibilityStates)
   const [show, setShow] = React.useState(() => false)
 
-  function toggleNav() {
-    if (show) {
-      setShow(false)
-    }
-    else {
-      setShow(true)
-    }
-  }
   
   function displayProject(id) {
     visibilityStates[id] = true
@@ -156,7 +148,7 @@ function App() {
       </div>
 
       {show ? <Navbar isFixed={true}/> : null}
-      <NavCollapse showNav={toggleNav}/>
+      <NavCollapse showNav={() => setShow(true)} hideNav={() => setShow(false)} isShown={show} />
   
 
       <ProjectDescription id='poker' title='Poker Simulator' link='https://github.com/Andy-V12345/Poker' image='poker.png' visible={isVisible} onShow={closeProject}>

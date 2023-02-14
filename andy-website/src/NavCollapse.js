@@ -1,32 +1,32 @@
 import React from "react";
 import { FaBars } from 'react-icons/fa';
 
-function NavCollapse({showNav}) {
+function NavCollapse({showNav, hideNav, isShown}) {
 
     const [scrolled, setScrolled] = React.useState(() => false)
     const [hovered, setHover] = React.useState(() => false)
     const [opened, setOpen] = React.useState(false)
 
     
-    function hideNavbar() {
+    function hideCollapse() {
         var scrolledY = window.scrollY
         if (scrolledY >= window.innerHeight) {
             setScrolled(true)
         }
         else {
             setScrolled(false)
-            showNav()
+            hideNav()
         }
     }
 
 
-    window.addEventListener('scroll', hideNavbar)
+    window.addEventListener('scroll', hideCollapse)
 
 
     return (
         <div className={scrolled ? 'collapsed' : 'collapsed hide'}>
             <h1>
-                <FaBars onClick={showNav} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} className={hovered ? 'bars hover' : 'bars'} />
+                <FaBars onClick={isShown ? hideNav : showNav} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} className={hovered ? 'bars hover' : 'bars'} />
             </h1>
         </div>
     )
