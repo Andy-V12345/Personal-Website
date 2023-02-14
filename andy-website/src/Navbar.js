@@ -1,8 +1,9 @@
 import './App.css';
 import logo from './logo.svg';
 import React from 'react';
-import { animated, useSpring } from '@react-spring/web';
 import { motion } from 'framer-motion';
+import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
+
 
 function Navbar({isFixed, hideNav}) {
 
@@ -13,11 +14,6 @@ function Navbar({isFixed, hideNav}) {
         "My Projects",
         "Contact"
     ]
-
-    const springs = useSpring({
-        from: {x: -5000},
-        to: {x: 0},
-    })
 
     if (isFixed) {
         return(
@@ -58,29 +54,16 @@ function Navbar({isFixed, hideNav}) {
                             </li>
                         ))}
                     </ul>
+                    <motion.h1 initial={{color: "white"}} whileHover={{color: "black"}}>
+                        <a href='https://github.com/Andy-V12345' target='_blank'><FaGithub /></a>
+                    </motion.h1>
+                    <motion.h1 initial={{color: "white"}} whileHover={{color: "black"}} className="linkedInIcon">
+                        <a href='https://www.linkedin.com/in/andyvu2026/' target='_blank'><FaLinkedinIn /></a>
+                    </motion.h1>
                 </div>
             </motion.div>
         )
     }
-
-    
-
-            // <animated.div style={{
-            //     ...springs
-            //     }}>
-            //     <div className={isFixed ? 'navbar fixed' : 'navbar'}>
-            //         <ul className='links'>
-            //             {headers.map((header) => (
-            //                 <li key={header}>
-            //                     <a href={`#${header}`}>
-            //                         <strong>{header}</strong>
-            //                     </a>
-            //                 </li>
-            //             ))}
-            //         </ul>
-            //         {isFixed ? null : <img className='logo' src={logo} alt='logo' />}
-            //     </div>
-            // </animated.div>
     
 }
 

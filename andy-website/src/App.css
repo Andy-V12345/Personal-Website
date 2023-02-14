@@ -321,6 +321,24 @@ img.bg {
   transform: translate(-50%, 0);
 }
 
+.navbar h1 {
+  color: white;
+  font-size: calc(20px + 1vw);
+  position: absolute;
+  top: 50%;  
+  right: 30px;
+  transform: translate(0, -95%);
+}
+
+.navbar .linkedInIcon {
+  right: 120px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: inherit;
+}
+
 
 
 .navbar.fixed {
@@ -393,8 +411,6 @@ img.bg {
 
 .links a {
   padding: 20px 20px;
-  text-decoration: none;
-  color: inherit;
 }
 
 .links a:hover {

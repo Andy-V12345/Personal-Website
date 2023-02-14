@@ -136,7 +136,7 @@ function App() {
           </motion.div>
         </div>
       </div>
-
+ 
       <div id='Contact' className='container Contact'>
         <div className='left'> 
           <ContactHeader />

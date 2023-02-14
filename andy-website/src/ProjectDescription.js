@@ -4,6 +4,7 @@ import BlueButton from "./BlueButton";
 import {FaTimes} from "react-icons/fa";
 
 
+
 function ProjectDescription({id, visible, onShow, title, children, link, image}) {
     const [state, setState] = React.useState(() => 'FaTimes')
 
@@ -26,7 +27,7 @@ function ProjectDescription({id, visible, onShow, title, children, link, image})
                 </div>
             </div>
         </div>
-
+  
     )
 }
 
