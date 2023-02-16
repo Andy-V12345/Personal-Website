@@ -1,5 +1,5 @@
 import React from 'react'
-import './App.css'
+import './css/App.css';
 
 function BlueButton({link, children}) {
     const [buttonState, setButtonState] = React.useState(() => 'blueButton')

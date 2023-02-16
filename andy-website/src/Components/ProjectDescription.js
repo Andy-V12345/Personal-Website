@@ -1,9 +1,9 @@
 import React from "react";
-import './App.css';
+import './css/App.css';
 import BlueButton from "./BlueButton";
 import {FaTimes} from "react-icons/fa";
 
-
+ 
 
 function ProjectDescription({id, visible, onShow, title, children, link, image}) {
     const [state, setState] = React.useState(() => 'FaTimes')
@@ -12,7 +12,7 @@ function ProjectDescription({id, visible, onShow, title, children, link, image})
         onShow(id)
          
     }, [onShow]) 
-     
+      
     return (
         <div onClick={handleClick} className={visible[id] ? 'background-container' : 'hidden'}>
             <div className={visible[id] ? 'project-description-container' : 'hidden'}>
@@ -28,7 +28,6 @@ function ProjectDescription({id, visible, onShow, title, children, link, image})
             </div>
         </div>
   
-    )
+    ) 
 }
-
 export default ProjectDescription;

@@ -1,6 +1,6 @@
 import React from "react";
 import Typical from "react-typical";
-import './App.css'
+import './css/Home.css';
 import useIsVisible from "./IsVisible";
 
 function HomeHeader() {

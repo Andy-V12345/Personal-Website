@@ -1,19 +1,20 @@
-import './App.css';
-import Navbar from './Navbar.js';
-import SkillBox from './SkillBox';
-import BlueButton from './BlueButton';
-import ProjectBox from './ProjectBox';
-import ContactLink from './ContactLink';
-import AboutHeader from './AboutHeader';
-import SkillsHeader from './SkillsHeader';
-import ProjectsHeader from './ProjectsHeader';
-import ContactHeader from './ContactHeader';
-import HomeHeader from './HomeHeader';
-import ProjectDescription from './ProjectDescription';
+import './Components/css/App.css';
+import './Components/css/Home.css';
+import Navbar from './Components/Navbar.js';
+import SkillBox from './Components/SkillBox';
+import BlueButton from './Components/BlueButton';
+import ProjectBox from './Components/ProjectBox';
+import ContactLink from './Components/ContactLink';
+import AboutHeader from './Components/AboutHeader';
+import SkillsHeader from './Components/SkillsHeader';
+import ProjectsHeader from './Components/ProjectsHeader';
+import ContactHeader from './Components/ContactHeader';
+import HomeHeader from './Components/HomeHeader';
+import ProjectDescription from './Components/ProjectDescription';
 import React from 'react';
-import NavCollapse from './NavCollapse';
+import NavCollapse from './Components/NavCollapse';
 import { motion } from 'framer-motion';
-
+ 
 
 function App() {
   
@@ -44,7 +45,7 @@ function App() {
     <div className='App'>
       <Navbar isFixed={false}/>
       
-      <div id='Home' className='container Home'>
+      <div id='Home' className='Home'>
         <img className='bg' src='northwestern-background.jpeg' alt='background' />
         <motion.div initial={{opacity: 0, width: 0}} whileInView={{opacity: 1, width: "75%"}} transition={{duration: 0.3}} className='home-header'>
           <div>
@@ -54,7 +55,7 @@ function App() {
         </motion.div>
       </div>
 
-      <div id='About Me' className='container About'>
+      <div id='About Me' className='About'>
         <div className='left-container'>
           <AboutHeader />
         </div> 
@@ -82,7 +83,7 @@ function App() {
       </div>
   
 
-      <div id='My Skills' className='container Skills'>
+      <div id='My Skills' className='Skills'>
         <div className='left-container'>
           <div className='skills-txt'>
             <SkillBox title="Software Engineering">
@@ -108,8 +109,8 @@ function App() {
           </div>
         </div>
       </div>
-
-      <div id='My Projects' className='container Projects'>
+ 
+      <div id='My Projects' className='Projects'>
         <div className='left-container'>
           <div className='header'>
             <ProjectsHeader />
@@ -137,7 +138,7 @@ function App() {
         </div>
       </div>
  
-      <div id='Contact' className='container Contact'>
+      <div id='Contact' className='Contact'>
         <div className='left'> 
           <ContactHeader />
           <motion.p initial={{x: -200, opacity: 0}} whileInView={{x: 0, opacity: 1}} >Have a cool project or question? Feel free to contact me.</motion.p>

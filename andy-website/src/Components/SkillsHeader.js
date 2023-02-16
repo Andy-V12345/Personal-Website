@@ -1,6 +1,6 @@
 import React from "react";
 import Typical from "react-typical";
-import './App.css'
+import './css/App.css';
 import useIsVisible from "./IsVisible";
 
 function SkillsHeader() {
