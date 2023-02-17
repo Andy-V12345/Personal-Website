@@ -1,0 +1,26 @@
+.left .contactHeader {
+    font-size: calc(25px + 2vmin);
+    display: inline;
+  }
+
+  .contact-link {
+    margin-bottom: 40px;
+  }
+  
+  .link-container {
+    background-color: none;
+    padding: 0;
+    transition: 0.2s ease-in-out;
+  }
+  
+  #hover.link-container {
+    background-color: #85CCCC;
+    padding: 8px 15px;
+    transition: 0.2s ease-in-out;
+  }
+  
+  .link-container a {
+    color: white;
+    font-family: inherit;
+    font-size: calc(5px + 2vmin);
+  }

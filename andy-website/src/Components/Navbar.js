@@ -1,4 +1,5 @@
 import './css/App.css';
+import './css/Navbar.css';
 import logo from './logo.svg';
 import React from 'react';
 import { motion } from 'framer-motion';

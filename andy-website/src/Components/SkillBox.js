@@ -1,6 +1,7 @@
 import React from 'react'
 import './css/App.css';
 import { motion } from 'framer-motion';
+import './css/SkillBox.css';
 
 function SkillBox({children, title}) {
     return (

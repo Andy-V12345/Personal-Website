@@ -1,6 +1,7 @@
 import React from "react";
 import Typical from "react-typical";
 import './css/App.css';
+import './css/Contacts.css'
 import useIsVisible from "./IsVisible";
 
 function ContactHeader() {

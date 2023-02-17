@@ -1,6 +1,7 @@
 import React from "react";
 import { FaBars } from 'react-icons/fa';
 import './css/App.css';
+import './css/NavCollapse.css'
 
 function NavCollapse({showNav, hideNav, isShown}) {
 

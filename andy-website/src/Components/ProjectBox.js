@@ -1,4 +1,5 @@
 import './css/App.css';
+import './css/ProjectBox.css';
 import React from 'react';
 import { motion } from 'framer-motion';
 

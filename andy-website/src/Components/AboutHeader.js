@@ -1,4 +1,3 @@
-import './css/About.css';
 import Typical from "react-typical";
 import useIsVisible from "./IsVisible";
 import React from 'react';

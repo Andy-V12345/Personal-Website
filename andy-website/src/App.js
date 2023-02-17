@@ -13,34 +13,18 @@ import HomeHeader from './Components/HomeHeader';
 import ProjectDescription from './Components/ProjectDescription';
 import React from 'react';
 import NavCollapse from './Components/NavCollapse';
+import ProjectDescriptionBackground from './Components/ProjectDescriptionBackground';
 import { motion } from 'framer-motion';
  
 
 function App() {
   
-
-  const visibilityStates = {
-    'poker': false,
-    'weather': false,
-    'LLL': false
-  }
  
-  const [isVisible, setVisibility] = React.useState(() => visibilityStates)
+  const [isPokerVisible, setPokerVisibility] = React.useState(() => false)
+  const [isWeatherVisible, setWeatherVisibility] = React.useState(() => false)
+  const [isLLLVisible, setLLLVisibility] = React.useState(() => false)
   const [show, setShow] = React.useState(() => false)
-
   
-  function displayProject(id) {
-    visibilityStates[id] = true
-    setVisibility(visibilityStates)
-  }
-
-  function closeProject(id) {
-    visibilityStates[id] = false
-    setVisibility(visibilityStates)
-  }
- 
-  
-
   return (
     <div className='App'>
       <Navbar isFixed={false}/>
@@ -118,18 +102,18 @@ function App() {
         </div>
         <div className='right-container'>
           <motion.div initial={{opacity: 0, height: 0}} whileInView={{opacity: 1, height: "80vh"}} transition={{duration: 0.3, delay: 0}} className='projects-container'>
-            <ProjectBox onShow={() => displayProject('poker')} 
+            <ProjectBox onShow={() => setPokerVisibility(true)} 
               image='poker.png' 
               title='Poker Simulator'>
                 Skills used: Python
             </ProjectBox>
-            <ProjectBox onShow={() => displayProject('weather')}
+            <ProjectBox onShow={() => setWeatherVisibility(true)}
             image='weather.jpeg' 
             title='Weather App'>
               Skills used: Swift, SwiftUI, XCode
             </ProjectBox>
            
-            <ProjectBox onShow={() => displayProject('LLL')}
+            <ProjectBox onShow={() => setLLLVisibility(true)}
             image='LLL.png' 
             title='Linked List Library'>
               Skills used: Python
@@ -154,20 +138,25 @@ function App() {
       {show ? <Navbar isFixed={true} hideNav={() => setShow(false)}/> : null}
       <NavCollapse showNav={() => setShow(true)} hideNav={() => setShow(false)} isShown={show} />
   
+      <ProjectDescriptionBackground close={() => setPokerVisibility(false)} visible={isPokerVisible} />
 
-      <ProjectDescription id='poker' title='Poker Simulator' link='https://github.com/Andy-V12345/Poker' image='poker.png' visible={isVisible} onShow={closeProject}>
+      <ProjectDescription title='Poker Simulator' link='https://github.com/Andy-V12345/Poker' image='poker.png' visible={isPokerVisible} close={() => setPokerVisibility(false)}>
         Developed a fully functional text-based poker program in python that allows the user to play against 
         the computer using the terminal. The picture to the left is what the user would see in the middle of a round of poker.
         I'm currently updating the program to add two more computer players to the game.
       </ProjectDescription>
 
-      <ProjectDescription id='weather' title='Weather App' link='https://github.com/Andy-V12345/Weather-App' image='weather.jpeg' visible={isVisible} onShow={closeProject}>
+      <ProjectDescriptionBackground close={() => setWeatherVisibility(false)} visible={isWeatherVisible} />
+
+      <ProjectDescription title='Weather App' link='https://github.com/Andy-V12345/Weather-App' image='weather.jpeg' visible={isWeatherVisible} close={() => setWeatherVisibility(false)}>
         Programmed a rough replica of the Apple Weather App that displays information on current weather conditions, the 12-hour
         and weekly forecast, precipitation, humidity, and the wind. The data is pulled from the OpenWeather API and is parsed 
         with Swift's Codable protocol. I also used Swift's CoreLocation library to access the user's location with their permission.
       </ProjectDescription>
 
-      <ProjectDescription id='LLL' title='Linked List Library' link='https://github.com/Andy-V12345/Linked-List-Library' image='LLL.png' visible={isVisible} onShow={closeProject}>
+      <ProjectDescriptionBackground close={() => setLLLVisibility(false)} visible={isLLLVisible} />
+
+      <ProjectDescription title='Linked List Library' link='https://github.com/Andy-V12345/Linked-List-Library' image='LLL.png' visible={isLLLVisible} close={() => setLLLVisibility(false)}>
         Developed a Python library that provides 6 useful functionalities to linked lists. The library allows users to create a 
         linked list from a normal list; more conveniently access, replace, insert and delete data from a linked list; and obtain
         the length of the linked list.
