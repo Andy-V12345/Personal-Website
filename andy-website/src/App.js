@@ -18,8 +18,7 @@ import { motion } from 'framer-motion';
  
 
 function App() {
-  
- 
+
   const [isPokerVisible, setPokerVisibility] = React.useState(() => false)
   const [isWeatherVisible, setWeatherVisibility] = React.useState(() => false)
   const [isLLLVisible, setLLLVisibility] = React.useState(() => false)
@@ -27,14 +26,15 @@ function App() {
   
   return (
     <div className='App'>
-      <Navbar isFixed={false}/>
       
+      <div className='bg'></div>
+      <Navbar isFixed={false}/>
+
       <div id='Home' className='Home'>
-        <img className='bg' src='northwestern-background.jpeg' alt='background' />
-        <motion.div initial={{opacity: 0, width: 0}} whileInView={{opacity: 1, width: "75%"}} transition={{duration: 0.3}} className='home-header'>
-          <div>
+        <motion.div initial={{opacity: 0, width: 0}} whileInView={{opacity: 1, width: "75%"}} transition={{duration: 0.3}} className='home-header h-1/5 sm:h-1/4 md:h-2/5 lg:h-1/2'>
+          <div className='space-y-3 lg:space-y-11'>
             <HomeHeader />
-            <h4>Software Engineer at Northwestern</h4>
+            <h4 className='text-sm sm:text-xl md:text-3xl lg:text-4xl' >Software Engineer at Northwestern</h4>
           </div>
         </motion.div>
       </div>
@@ -161,6 +161,8 @@ function App() {
         linked list from a normal list; more conveniently access, replace, insert and delete data from a linked list; and obtain
         the length of the linked list.
       </ProjectDescription>
+
+      <p className="text-xs">hello</p>
 
     </div>
     

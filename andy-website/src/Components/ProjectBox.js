@@ -1,7 +1,6 @@
 import './css/App.css';
 import './css/ProjectBox.css';
 import React from 'react';
-import { motion } from 'framer-motion';
 
 function ProjectBox({image, title, children, onShow}) {
     const [state, setState] = React.useState(() => '')
