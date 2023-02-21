@@ -3,10 +3,9 @@ import { FaBars } from 'react-icons/fa';
 import './css/App.css';
 import './css/NavCollapse.css'
 
-function NavCollapse({showNav, hideNav, isShown}) {
+function NavCollapse({showNav, hideNav, isNavVisible, isPhoneNav}) {
 
     const [scrolled, setScrolled] = React.useState(() => false)
-    const [hovered, setHover] = React.useState(() => false)
 
     
     function hideCollapse() {
@@ -20,14 +19,34 @@ function NavCollapse({showNav, hideNav, isShown}) {
         }
     }
 
+    const showPhoneNav = () => {
+        setScrolled(false)
+        showNav()
+    }
+
+    React.useEffect(() => {
+        if (isPhoneNav) {
+            if (isNavVisible) {
+                setScrolled(false)
+            }
+            else {
+                setScrolled(true)
+            }
+        }
+    }, [isNavVisible])
+
 
     window.addEventListener('scroll', hideCollapse)
 
 
     return (
-        <div className={scrolled ? 'collapsed' : 'collapsed hide'}>
-            <h1>
-                <FaBars onClick={isShown ? hideNav : showNav} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} className={hovered ? 'bars hover ' : 'bars'} />
+        <div className={scrolled ? 'top-5 sm:top-7 md:top-7 lg:top-7 collapsed' : 'collapsed hide'}>
+            <h1 className="sm:text-2xl lg:text-3xl">
+                {isPhoneNav ? 
+                <FaBars onClick={showPhoneNav} className="bars"></FaBars>
+                :
+                <FaBars onClick={isNavVisible ? hideNav : showNav} className="bars" />
+                }
             </h1>
         </div>
     )

@@ -22,7 +22,18 @@ function App() {
   const [isPokerVisible, setPokerVisibility] = React.useState(() => false)
   const [isWeatherVisible, setWeatherVisibility] = React.useState(() => false)
   const [isLLLVisible, setLLLVisibility] = React.useState(() => false)
-  const [show, setShow] = React.useState(() => false)
+  const [isNavVisible, setNavVisible] = React.useState(() => false)
+  const [windowWidth, setWindowWidth] = React.useState(() => window.innerWidth)
+
+  React.useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowWidth(window.innerWidth)
+    }
+    window.addEventListener('resize', handleWindowResize)
+    return () => {
+      window.removeEventListener('resize', handleWindowResize)
+    }
+  })
   
   return (
     <div className='App'>
@@ -135,8 +146,8 @@ function App() {
         </div>
       </div>
 
-      {show ? <Navbar isFixed={true} hideNav={() => setShow(false)}/> : null}
-      <NavCollapse showNav={() => setShow(true)} hideNav={() => setShow(false)} isShown={show} />
+      {isNavVisible ? <Navbar isFixed={true} hideNav={() => setNavVisible(false)} isPhoneNav={(windowWidth <= 500) ? true : false}/> : null}
+      <NavCollapse showNav={() => setNavVisible(true)} hideNav={() => setNavVisible(false)} isNavVisible={isNavVisible} isPhoneNav={(windowWidth <= 500) ? true : false}/>
   
       <ProjectDescriptionBackground close={() => setPokerVisibility(false)} visible={isPokerVisible} />
 
@@ -162,7 +173,6 @@ function App() {
         the length of the linked list.
       </ProjectDescription>
 
-      <p className="text-xs">hello</p>
 
     </div>
     

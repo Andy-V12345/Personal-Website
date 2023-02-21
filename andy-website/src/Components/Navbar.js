@@ -2,10 +2,10 @@ import './css/App.css';
 import './css/Navbar.css';
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
+import { FaLinkedinIn, FaGithub, FaTimes } from 'react-icons/fa';
 
 
-function Navbar({isFixed, hideNav}) {
+function Navbar({isFixed, hideNav, isPhoneNav}) {
 
     const headers = [
         "Home",
@@ -15,27 +15,53 @@ function Navbar({isFixed, hideNav}) {
         "Contact"
     ]
 
+    React.useEffect(() => {
+        console.log(isPhoneNav)
+    }, [isPhoneNav])
+
     if (isFixed) {
-        return(
-            
-            <motion.div
-                initial={{opacity: 0}}
-                animate={{opacity: 1}}
-                transition={{ease: 'easeInOut', duration: 0.4}}
-            >
-                <div className='navbar fixed min-w-full'>
-                    <ul className='links px-3 py-3 sm:px-4 sm:py-5'>
+        if (isPhoneNav) {
+            return (
+                <motion.div 
+                    initial={{opacity: 0, height: 0}}
+                    animate={{opacity: 1, height: '50vh'}}
+                    className="phoneNav"
+                >
+                    <ul>
                         {headers.map((header) => (
                             <li key={header}>
-                                <a className='px-3 py-3 sm:p-5' href={`#${header}`} onClick={hideNav}>
+                                <a href={`#${header}`} onClick={hideNav}>
                                     <strong>{header}</strong>
                                 </a>
                             </li>
                         ))}
                     </ul>
-                </div>
-            </motion.div>
-        )
+                    <h1><FaTimes onClick={hideNav} className="FaTime"></FaTimes></h1>
+                </motion.div>
+            )
+        }
+        else {
+            return(
+                
+                <motion.div
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    transition={{ease: 'easeInOut', duration: 0.4}}
+                >
+                    <div className='navbar fixed min-w-full'>
+                        <ul className='links px-3 py-3 sm:px-4 sm:py-5'>
+                            {headers.map((header) => (
+                                <li key={header}>
+                                    <a className='text-xs px-3 py-7 sm:text-sm sm:px-5 md:text-base lg:text-lg' href={`#${header}`} onClick={hideNav}>
+                                        <strong>{header}</strong>
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </motion.div>
+            )
+        }
     } else {
         return(
 
@@ -48,7 +74,7 @@ function Navbar({isFixed, hideNav}) {
                     <ul className='links px-3 py-3 sm:px-4 sm:py-5'>
                         {headers.map((header) => (
                             <li key={header}>
-                                <a className='px-3 py-3 sm:p-5' href={`#${header}`}>
+                                <a className='text-xs px-3 py-7 sm:text-sm sm:px-5 md:text-base lg:text-lg' href={`#${header}`}>
                                     <strong>{header}</strong>
                                 </a>
                             </li>
