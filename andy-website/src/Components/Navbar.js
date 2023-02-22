@@ -24,7 +24,7 @@ function Navbar({isFixed, hideNav, isPhoneNav}) {
             return (
                 <motion.div 
                     initial={{opacity: 0, height: 0}}
-                    animate={{opacity: 1, height: '50vh'}}
+                    animate={{opacity: 1, height: 'fit-content'}}
                     className="phoneNav"
                 >
                     <ul>

@@ -55,7 +55,7 @@ function App() {
           <AboutHeader />
         </div> 
         <div className='right-container'>
-          <div className='about-txt'>
+          <div className='about-txt text-xs sm:text-base md:text-xl lg:text-2xl'>
             <div>
               <motion.p initial={{x: 100, opacity: 0}} whileInView={{x: 0, opacity: 1}} transition={{type: "spring", delay: 0, duration: 0.4}}>
                 I'm a freshman <strong>computer science</strong> student at Northwestern University. My <strong>goal </strong> 

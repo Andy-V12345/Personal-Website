@@ -56,7 +56,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: calc(20px + 2vmin);
 }
 
 
@@ -177,13 +176,12 @@
 }
 
 .about-txt div {
-  padding: 20px;
+  padding: 20px 0;
   margin: auto;
 }
 
 .about-txt p {
   text-align: left;
-  font-size: calc(10px + 1vw);
 }
 
 
