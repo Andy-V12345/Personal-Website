@@ -5,13 +5,11 @@ import './css/SkillBox.css';
 
 function SkillBox({children, title}) {
     return (
-        <motion.div initial={{opacity: 0, x: -500}} whileInView={{opacity: 1, x: 0}} transition={{type: "spring", delay: 0, duration: 0.4}}>
-            <div className='skillbox'>
-                <h2>{title}</h2>
-                <hr></hr>
-                <p>{children}</p>
-            </div>
-        </motion.div>
+        <div className='skillbox w-4/5 py-4 px-3 space-y-2 lg:space-y-3 md:py-5 md:px-5 md:w-3/5 xl:w-1/2'>
+            <h2 className='font-bold text-sm md:text-lg xl:text-xl'>{title}</h2>
+            <hr></hr>
+            <p className='text-xs md:text-base xl:text-lg'>{children}</p>
+        </div>
     )
 }
 

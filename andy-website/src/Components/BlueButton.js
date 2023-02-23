@@ -8,7 +8,7 @@ function BlueButton({link, children}) {
         <button onMouseEnter={() => setButtonState('blueButton-hover')} 
                 onMouseLeave={() => setButtonState('blueButton')} 
                 className={buttonState}>
-            <a className='buttonLink' href={link} target='_blank'>{children}</a>
+            <a className='buttonLink text-sm sm:text-base' href={link} target='_blank'>{children}</a>
         </button>
     )
 }
