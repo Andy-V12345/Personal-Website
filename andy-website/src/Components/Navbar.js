@@ -2,7 +2,7 @@ import './css/App.css';
 import './css/Navbar.css';
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaLinkedinIn, FaGithub, FaTimes } from 'react-icons/fa';
+import { FaTimes } from 'react-icons/fa';
 
 
 function Navbar({isFixed, hideNav, isPhoneNav}) {
@@ -14,10 +14,6 @@ function Navbar({isFixed, hideNav, isPhoneNav}) {
         "My Projects",
         "Contact"
     ]
-
-    React.useEffect(() => {
-        console.log(isPhoneNav)
-    }, [isPhoneNav])
 
     if (isFixed) {
         if (isPhoneNav) {
@@ -49,10 +45,10 @@ function Navbar({isFixed, hideNav, isPhoneNav}) {
                     transition={{ease: 'easeInOut', duration: 0.4}}
                 >
                     <div className='navbar fixed min-w-full'>
-                        <ul className='links px-3 py-3 sm:px-4 sm:py-5'>
+                        <ul className='links md:px-4 md:py-5 md:rounded-lg'>
                             {headers.map((header) => (
-                                <li key={header}>
-                                    <a className='text-xs px-3 py-7 sm:text-sm sm:px-5 md:text-base lg:text-lg' href={`#${header}`} onClick={hideNav}>
+                                <li className='mx-0 my-0' key={header}>
+                                    <a className='md:px-5 md:text-sm lg:text-base xl:text-xl lg:px-6' href={`#${header}`} onClick={hideNav}>
                                         <strong>{header}</strong>
                                     </a>
                                 </li>
@@ -71,10 +67,10 @@ function Navbar({isFixed, hideNav, isPhoneNav}) {
                 transition={{ease: 'easeInOut', duration: 0.4}}
             >
                 <div className='navbar min-w-full'>
-                    <ul className='links px-3 py-3 sm:px-4 sm:py-5'>
+                    <ul className='links md:px-4 md:py-5 md:rounded-lg'>
                         {headers.map((header) => (
-                            <li key={header}>
-                                <a className='text-xs px-3 py-7 sm:text-sm sm:px-5 md:text-base lg:text-lg' href={`#${header}`}>
+                            <li className='mx-0 my-0' key={header}>
+                                <a className='md:px-5 md:text-sm lg:text-base xl:text-xl lg:px-6' href={`#${header}`}>
                                     <strong>{header}</strong>
                                 </a>
                             </li>

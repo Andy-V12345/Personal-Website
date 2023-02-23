@@ -24,6 +24,7 @@ function App() {
   const [isLLLVisible, setLLLVisibility] = React.useState(() => false)
   const [isNavVisible, setNavVisible] = React.useState(() => false)
   const [windowWidth, setWindowWidth] = React.useState(() => window.innerWidth)
+  const [isNavCollapseVisible, setNavCollapseVisible] = React.useState(() => false)
 
   React.useEffect(() => {
     const handleWindowResize = () => {
@@ -34,12 +35,41 @@ function App() {
       window.removeEventListener('resize', handleWindowResize)
     }
   })
+
+  React.useEffect(() => {
+    if (windowWidth <= 800) {
+      setNavVisible(false)
+      setNavCollapseVisible(true)
+    }
+    else {
+      hideCollapse((windowWidth <= 800))
+    }
+  }, [windowWidth])
+
+  function hideCollapse(isPhoneNav) {
+    if (isPhoneNav === false) {
+        var scrolledY = window.scrollY
+        if (scrolledY >= window.innerHeight) {
+            setNavCollapseVisible(true)
+        }
+        else {
+            setNavCollapseVisible(false)
+            setNavVisible(false)
+        }
+    }
+    else {
+      setNavCollapseVisible(true)
+    }
+  }
+
+  window.addEventListener('scroll', () => hideCollapse((windowWidth <= 800)))
   
   return (
     <div className='App'>
       
       <div className='bg'></div>
-      <Navbar isFixed={false}/>
+      {(windowWidth <= 800) ? null : <Navbar isFixed={false}/>}
+
 
       <div id='Home' className='Home'>
         <motion.div initial={{opacity: 0, width: 0}} whileInView={{opacity: 1, width: "75%"}} transition={{duration: 0.3}} className='home-header h-1/5 sm:h-1/4 md:h-2/5 lg:h-1/2'>
@@ -55,7 +85,7 @@ function App() {
           <AboutHeader />
         </div> 
         <div className='right-container'>
-          <div className='about-txt text-xs sm:text-base md:text-xl lg:text-2xl'>
+          <div className='about-txt text-sm sm:text-base md:text-xl lg:text-2xl'>
             <div>
               <motion.p initial={{x: 100, opacity: 0}} whileInView={{x: 0, opacity: 1}} transition={{type: "spring", delay: 0, duration: 0.4}}>
                 I'm a freshman <strong>computer science</strong> student at Northwestern University. My <strong>goal </strong> 
@@ -146,8 +176,8 @@ function App() {
         </div>
       </div>
 
-      {isNavVisible ? <Navbar isFixed={true} hideNav={() => setNavVisible(false)} isPhoneNav={(windowWidth <= 500) ? true : false}/> : null}
-      <NavCollapse showNav={() => setNavVisible(true)} hideNav={() => setNavVisible(false)} isNavVisible={isNavVisible} isPhoneNav={(windowWidth <= 500) ? true : false}/>
+      {isNavVisible ? <Navbar isFixed={true} hideNav={() => {setNavVisible(false); setNavCollapseVisible(true)}} isPhoneNav={(windowWidth <= 800) ? true : false}/> : null}
+      {isNavCollapseVisible ? <NavCollapse hideNavCollapse={() => setNavCollapseVisible(false)} showNav={() => setNavVisible(true)} hideNav={() => setNavVisible(false)} isNavVisible={isNavVisible} isPhoneNav={(windowWidth <= 800) ? true : false}/> : null}
   
       <ProjectDescriptionBackground close={() => setPokerVisibility(false)} visible={isPokerVisible} />
 

@@ -2,53 +2,27 @@ import React from "react";
 import { FaBars } from 'react-icons/fa';
 import './css/App.css';
 import './css/NavCollapse.css'
+import { motion } from 'framer-motion';
 
-function NavCollapse({showNav, hideNav, isNavVisible, isPhoneNav}) {
-
-    const [scrolled, setScrolled] = React.useState(() => false)
-
-    
-    function hideCollapse() {
-        var scrolledY = window.scrollY
-        if (scrolledY >= window.innerHeight) {
-            setScrolled(true)
-        }
-        else {
-            setScrolled(false)
-            hideNav()
-        }
-    }
+function NavCollapse({hideNavCollapse, showNav, hideNav, isNavVisible, isPhoneNav}) {
+   
 
     const showPhoneNav = () => {
-        setScrolled(false)
+        hideNavCollapse()
         showNav()
     }
 
-    React.useEffect(() => {
-        if (isPhoneNav) {
-            if (isNavVisible) {
-                setScrolled(false)
-            }
-            else {
-                setScrolled(true)
-            }
-        }
-    }, [isNavVisible])
-
-
-    window.addEventListener('scroll', hideCollapse)
-
 
     return (
-        <div className={scrolled ? 'top-5 sm:top-7 md:top-7 lg:top-7 collapsed' : 'collapsed hide'}>
-            <h1 className="sm:text-2xl lg:text-3xl">
+        <motion.div initial={{opacity: 0, left: -100}} animate={{opacity: 1, left: 25}} transition={{type: 'spring', duration: 0.4, delay: 0}} className='top-2 sm:top-7 md:top-7 lg:top-7 collapsed'>
+            <h1 className="text-lg sm:text-2xl lg:text-3xl">
                 {isPhoneNav ? 
                 <FaBars onClick={showPhoneNav} className="bars"></FaBars>
                 :
                 <FaBars onClick={isNavVisible ? hideNav : showNav} className="bars" />
                 }
             </h1>
-        </div>
+        </motion.div>
     )
 }
 
