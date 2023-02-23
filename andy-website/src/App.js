@@ -183,7 +183,7 @@ function App() {
   
       <ProjectDescriptionBackground close={() => setPokerVisibility(false)} visible={isPokerVisible} />
 
-      <ProjectDescription title='Poker Simulator' link='https://github.com/Andy-V12345/Poker' image='poker.png' visible={isPokerVisible} close={() => setPokerVisibility(false)}>
+      <ProjectDescription isPhone={(windowWidth < 500)} title='Poker Simulator' link='https://github.com/Andy-V12345/Poker' image='poker.png' visible={isPokerVisible} close={() => setPokerVisibility(false)}>
         Developed a fully functional text-based poker program in python that allows the user to play against 
         the computer using the terminal. The picture to the left is what the user would see in the middle of a round of poker.
         I'm currently updating the program to add two more computer players to the game.
@@ -191,7 +191,7 @@ function App() {
 
       <ProjectDescriptionBackground close={() => setWeatherVisibility(false)} visible={isWeatherVisible} />
 
-      <ProjectDescription title='Weather App' link='https://github.com/Andy-V12345/Weather-App' image='weather.jpeg' visible={isWeatherVisible} close={() => setWeatherVisibility(false)}>
+      <ProjectDescription isPhone={(windowWidth < 500)} title='Weather App' link='https://github.com/Andy-V12345/Weather-App' image='weather.jpeg' visible={isWeatherVisible} close={() => setWeatherVisibility(false)}>
         Programmed a rough replica of the Apple Weather App that displays information on current weather conditions, the 12-hour
         and weekly forecast, precipitation, humidity, and the wind. The data is pulled from the OpenWeather API and is parsed 
         with Swift's Codable protocol. I also used Swift's CoreLocation library to access the user's location with their permission.
@@ -199,7 +199,7 @@ function App() {
 
       <ProjectDescriptionBackground close={() => setLLLVisibility(false)} visible={isLLLVisible} />
 
-      <ProjectDescription title='Linked List Library' link='https://github.com/Andy-V12345/Linked-List-Library' image='LLL.png' visible={isLLLVisible} close={() => setLLLVisibility(false)}>
+      <ProjectDescription isPhone={(windowWidth < 500)} title='Linked List Library' link='https://github.com/Andy-V12345/Linked-List-Library' image='LLL.png' visible={isLLLVisible} close={() => setLLLVisibility(false)}>
         Developed a Python library that provides 6 useful functionalities to linked lists. The library allows users to create a 
         linked list from a normal list; more conveniently access, replace, insert and delete data from a linked list; and obtain
         the length of the linked list.

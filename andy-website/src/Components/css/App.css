@@ -21,18 +21,18 @@
   background-color: #3DADAD;
   border: none;
   color: white;
-  padding: 15px 25px;
+  /* padding: 15px 25px; */
   /* font-size: large; */
   font-weight: bold;
   border-radius: 10px;
   transition: .2s ease-in-out;
 }
 
-.blueButton-hover {
+.blueButton:hover {
   background-color: #3DADAD;
   border: none;
   color: white;
-  padding: 15px 25px;
+  /* padding: 15px 25px; */
   /* font-size: large; */
   font-weight: bold;
   border-radius: 10px;
