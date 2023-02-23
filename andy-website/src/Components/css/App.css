@@ -72,11 +72,10 @@
   background: rgba(133, 204, 204, 0.2);
   border-radius: 10px;
   position: absolute;
-  width: 75%;
+  /* width: 75%; */
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  max-height: 95vh;
   overflow-y: scroll;
   padding-left: 0px;
   padding-right: 0px;

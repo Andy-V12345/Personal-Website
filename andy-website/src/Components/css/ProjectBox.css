@@ -1,8 +1,8 @@
 .projectbox {
     background-color: rgba(7,20,20, 0.6);
-    width: 50%;
+    /* width: 50%; */
     border-radius: 10px;
-    padding: 0;
+    /* padding: 0; */
     margin: 20px auto;
     padding-bottom: 10px;
     transition: 0.3s ease-in-out;
@@ -10,7 +10,7 @@
 
   #hover.projectbox {
     background-color: rgba(7,20,20, 0.6);
-    width: 50%;
+    /* width: 50%; */
     border-radius: 10px;
     padding: 0;
     margin: 20px auto;
@@ -26,11 +26,12 @@
   }
   
   .projectbox hr {
-    width: 75%;
+    width: 70%;
+    margin: auto;
   }
   
   .img-container {
-    margin: 0;
+    margin: 10px 0;
     width: 100%;
     max-height: 50%;
   }

@@ -9,7 +9,7 @@ function ProjectsHeader() {
     const isVisible = useIsVisible(ref)
 
     return (
-        <h1 ref={ref}>
+        <h1 ref={ref} className='font-bold text-2xl sm:text-4xl lg:text-6xl'>
             {isVisible ? <Typical steps={['My Projects', 3000]}/> : ''}
         </h1>
     )

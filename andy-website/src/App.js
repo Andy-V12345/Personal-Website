@@ -144,7 +144,7 @@ function App() {
           </div>
         </div>
         <div className='right-container'>
-          <motion.div initial={{opacity: 0, height: 0}} whileInView={{opacity: 1, height: "80vh"}} transition={{duration: 0.3, delay: 0}} className='projects-container'>
+          <motion.div initial={{opacity: 0, height: 0}} whileInView={{opacity: 1, height: "75vh"}} transition={{duration: 0.3, delay: 0}} className='projects-container w-11/12 sm:w-3/4'>
             <ProjectBox onShow={() => setPokerVisibility(true)} 
               image='poker.png' 
               title='Poker Simulator'>
