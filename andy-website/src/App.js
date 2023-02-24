@@ -108,34 +108,59 @@ function App() {
       </div>
   
 
-      <div id='My Skills' className='Skills'>
-        <div className='left-container'>
-          <div className='skills-txt'>
-            <SkillBox title="Software Engineering">
-              Well-versed in object-oriented programming languages such as 
-              Python, Java, and C
-            </SkillBox>
-            <hr className='divider'></hr>
-            {/* <motion.hr initial={{opacity: 0, x: -500}} whileInView={{opacity: 1, x: 0}} className='divider'></motion.hr> */}
-            <SkillBox title="iOS Development">
-              Experienced with using Swift and XCode to develop and deploy mobile iOS applications
-            </SkillBox>
-            {/* <motion.hr initial={{opacity: 0, x: -500}} whileInView={{opacity: 1, x: 0}} className='divider'></motion.hr> */}
-            <hr className='divider'></hr>
-            <SkillBox title="Front-End Development">
-              Proficient with SwiftUI, UIKit, HTML, CSS, JavaScript, and the ReactJS framework
-            </SkillBox>
-          </div>
+      {(windowWidth >= 640) ? 
+        <div id='My Skills' className='Skills'>
+          <div className='left-container'>
+              <div className='skills-txt md:space-y-3 lg:space-y-6'>
+                <SkillBox title="Software Engineering">
+                  Well-versed in object-oriented programming languages such as 
+                  Python, Java, and C
+                </SkillBox>
+                <motion.hr initial={{opacity: 0, x: -100}} whileInView={{opacity: 1, x: 0}} transition={{type: "spring", delay: 0, duration: 0.4}} className='divider'></motion.hr>
+                <SkillBox title="iOS Development">
+                  Experienced with using Swift and XCode to develop and deploy mobile iOS applications
+                </SkillBox>
+                <motion.hr initial={{opacity: 0, x: -100}} whileInView={{opacity: 1, x: 0}} transition={{type: "spring", delay: 0, duration: 0.4}} className='divider'></motion.hr>
+                <SkillBox title="Front-End Development">
+                  Proficient with SwiftUI, UIKit, HTML, CSS, JavaScript, and the ReactJS framework
+                </SkillBox>
+              </div>
+            </div>
+            <div className='right-container'>
+              <div className='header'>
+                <div className='header-container space-y-5 md:space-y-11'>
+                  <SkillsHeader />
+                  <BlueButton link='https://drive.google.com/file/d/1ZehCmz5QhYUrA66p4JbZd5qGr-Wjb5Wd/view?usp=sharing'>My Resume</BlueButton>
+                </div>
+              </div>
+            </div>
         </div>
-        <div className='right-container'>
-          <div className='header'>
-            <div className='header-container space-y-5 md:space-y-11'>
-              <SkillsHeader />
-              <BlueButton link='https://drive.google.com/file/d/1ZehCmz5QhYUrA66p4JbZd5qGr-Wjb5Wd/view?usp=sharing'>My Resume</BlueButton>
+      :
+        <div id='My Skills' className='Skills-phone'>
+          <div className='skills-phone-container space-y-11'>
+            <div className='space-y-4'>
+                <SkillBox title="Software Engineering">
+                  Well-versed in object-oriented programming languages such as 
+                  Python, Java, and C
+                </SkillBox>
+                <motion.hr initial={{opacity: 0, x: -100}} whileInView={{opacity: 1, x: 0}} transition={{type: "spring", delay: 0, duration: 0.4}} className='divider'></motion.hr>
+                <SkillBox title="iOS Development">
+                  Experienced with using Swift and XCode to develop and deploy mobile iOS applications
+                </SkillBox>
+                <motion.hr initial={{opacity: 0, x: -100}} whileInView={{opacity: 1, x: 0}} transition={{type: "spring", delay: 0, duration: 0.4}} className='divider'></motion.hr>
+                <SkillBox title="Front-End Development">
+                  Proficient with SwiftUI, UIKit, HTML, CSS, JavaScript, and the ReactJS framework
+                </SkillBox>
+            </div>
+            <div className='header-phone'>
+              <div className='header-container space-y-5 md:space-y-11'>
+                <SkillsHeader />
+                <BlueButton link='https://drive.google.com/file/d/1ZehCmz5QhYUrA66p4JbZd5qGr-Wjb5Wd/view?usp=sharing'>My Resume</BlueButton>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      }
  
       <div id='My Projects' className='Projects'>
         <div className='left-container'>

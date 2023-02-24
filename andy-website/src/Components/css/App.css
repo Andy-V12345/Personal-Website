@@ -58,6 +58,10 @@
   transform: translate(-50%, -50%);
 }
 
+.header-phone {
+  width: 100%;
+}
+
 
 
 .Projects {
@@ -133,7 +137,50 @@
   max-height: 100vh;
 }
 
+.skills-txt-phone {
+  position: absolute;
+  width: 100%;
+  background-color: blue;
+  margin: 0;
+  padding: 0;
+  height: 50vh;
+}
+
+.skills-txt-phone .divider {
+  width: 40%;
+  background-color: #57FAFA;
+  border: none;
+  height: 2px;
+  margin: auto;
+}
+
 .skills-txt .divider {
+  width: 40%;
+  background-color: #57FAFA;
+  border: none;
+  height: 2px;
+  margin: auto;
+}
+
+.Skills-phone {
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
+  display: block;
+  color: white;
+  background-color: #213333;
+}
+
+
+
+.skills-phone-container {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.skills-phone-container .divider {
   width: 40%;
   background-color: #57FAFA;
   border: none;
