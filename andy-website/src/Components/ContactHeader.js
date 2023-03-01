@@ -10,8 +10,8 @@ function ContactHeader() {
     const isVisible = useIsVisible(ref)
 
     return (
-        <h1 className='contactHeader' ref={ref}>
-            Available for {` `}
+        <h1 className='contactHeader w-full font-bold text-xl md:w-1/2 sm:text-3xl xl:text-4xl' ref={ref}>
+            {"Available for "}
             {isVisible ? <Typical className='special-color contactHeader' steps={['Summer Internships', 3000]}/> : ''}
         </h1>
     )

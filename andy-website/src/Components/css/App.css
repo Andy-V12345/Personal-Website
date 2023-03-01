@@ -46,6 +46,7 @@
   background-color: #213333;
   height: 100vh;
   color: white;
+  max-height: 800px;
 }
 
 .header {
@@ -70,19 +71,20 @@
   height: 100vh;
   background-color: #213333;
   color: white;
+  max-height: 1100px;
 }
 
 .projects-container {
   background: rgba(133, 204, 204, 0.2);
   border-radius: 10px;
   position: absolute;
-  /* width: 75%; */
-  left: 50%;
   top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   overflow-y: scroll;
   padding-left: 0px;
   padding-right: 0px;
+  max-width: 400px;
 }
 
 
@@ -93,30 +95,30 @@
   background: rgba(7,20,20);
   color: white;
   overflow: hidden;
+  max-height: 370px;
 }
 
 
 .left {
-  width: 50%;
+  /* width: 50%; */
   height: 100%;
   align-items: left;
   text-align: left;
-  padding-left: 30px;
-  padding-top: 50px;
+  /* padding-left: 30px; */
+  /* padding-top: 50px; */
 }
 
 .left p {
-  width: 60%;
-  font-size: calc(10px + 2vmin);
+  max-width: 340px;
+  /* width: 60%; */
 }
 
 .right {
-  width: 50%;
+  /* width: 50%; */
   height: 100%;
   align-items: right;
   text-align: right;
-  padding-right: 30px;
-  padding-top: 55px;
+  /* padding-right: 30px; */
 }
 
 
@@ -125,6 +127,7 @@
   background-color: #A2FAFA;
   border: none;
   height: 2px;
+  max-width: 300px;
 }
 
 
@@ -134,13 +137,11 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  max-height: 100vh;
 }
 
 .skills-txt-phone {
   position: absolute;
   width: 100%;
-  background-color: blue;
   margin: 0;
   padding: 0;
   height: 50vh;
@@ -171,6 +172,24 @@
   background-color: #213333;
 }
 
+.Skills-large {
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
+  display: block;
+  color: white;
+  background-color: #213333;
+  max-height: 700px;
+  /* background-color: red; */
+}
+
+.flex-container {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  /* background-color: blue; */
+  max-width: 1900px;
+}
 
 
 .skills-phone-container {
@@ -179,6 +198,15 @@
   top: 50%;
   transform: translate(0, -50%);
 }
+
+.skills-large-container {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translate(0, -50%);
+  /* background-color: green; */
+}
+
 
 .skills-phone-container .divider {
   width: 40%;
@@ -194,8 +222,8 @@
   display: flex;
   color: white;
   background-color: #213333;
+  max-height: 800px;
 }
-
 
 .header-container h1 {
   margin-top: 0px;
@@ -205,14 +233,14 @@
   position: relative;
   display: table;
   width: 50%;
-  height: 100vh;
+  height: 100%;
 }
 
 .left-container {
   position: relative;
   display: table;
   width: 50%;
-  height: 100vh;
+  height: 100%;
 }
 
 .about-txt {
@@ -229,6 +257,7 @@
 
 .about-txt p {
   text-align: left;
+  max-width: 800px;
 }
 
 

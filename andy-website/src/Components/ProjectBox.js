@@ -11,7 +11,7 @@ function ProjectBox({image, title, children, onShow}) {
             onMouseEnter={() => setState('hover')} 
             onMouseLeave={() => setState('')} 
             id={state} 
-            className='projectbox w-10/12 px-0 md:w-3/5 lg:w-1/2'
+            className='projectbox w-10/12 px-0 md:w-4/5 lg:w-3/4'
         >
             <div className='img-container'>
                 <img src={image} alt='project image' />
