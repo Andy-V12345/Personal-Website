@@ -72,7 +72,7 @@ function App() {
 
 
       <div id='Home' className='Home'>
-        <motion.div initial={{opacity: 0, width: 0}} whileInView={{opacity: 1, width: "75%"}} transition={{duration: 0.3}} className='home-header h-1/5 sm:h-1/4 md:h-2/5 lg:h-1/2'>
+        <motion.div initial={{opacity: 0, width: 0}} whileInView={{opacity: 1, width: "75%"}} transition={{duration: 0.3}} className='home-header h-1/5 max-h-40 sm:max-h-64 lg:max-h-72 xl:max-h-96 sm:h-1/4 md:h-2/5 lg:h-1/2'>
           <div className='space-y-3 lg:space-y-11'>
             <HomeHeader />
             <h4 className='text-sm sm:text-xl md:text-3xl lg:text-4xl' >Software Engineer at Northwestern</h4>
@@ -80,7 +80,7 @@ function App() {
         </motion.div>
       </div>
 
-      <div id='About Me' className='About'>
+      <div id='About Me' className={(windowWidth < 640) ? 'About phone' : 'About'}>
         <div className='left-container'>
           <AboutHeader />
         </div> 
@@ -192,36 +192,73 @@ function App() {
       :
         null
       }
- 
-      <div id='My Projects' className='Projects'>
-        <div className='left-container'>
-          <div className='header'>
-            <ProjectsHeader />
+
+      {(windowWidth < 1600) ? 
+        <div id='My Projects' className={(windowWidth < 640) ? 'Projects phone' : 'Projects'}>
+          <div className='left-container'>
+            <div className='header'>
+              <ProjectsHeader />
+            </div>
+          </div>
+          <div className='right-container'>
+            <motion.div initial={{opacity: 0, height: 0}} whileInView={{opacity: 1, height: '75vh'}} transition={{duration: 0.3, delay: 0}} className='projects-container w-11/12 sm:w-3/4'>
+              <ProjectBox onShow={() => setPokerVisibility(true)} 
+                image='poker.png' 
+                title='Poker Simulator'
+                isLarge={false}>
+                  Skills used: Python
+              </ProjectBox>
+              <ProjectBox onShow={() => setWeatherVisibility(true)}
+              image='weather.jpeg' 
+              title='Weather App'
+              isLarge={false}>
+                Skills used: Swift, SwiftUI, XCode
+              </ProjectBox>
+            
+              <ProjectBox onShow={() => setLLLVisibility(true)}
+              image='LLL.png' 
+              title='Linked List Library'
+              isLarge={false}>
+                Skills used: Python
+              </ProjectBox>
+            </motion.div>
           </div>
         </div>
-        <div className='right-container'>
-          <motion.div initial={{opacity: 0, height: 0}} whileInView={{opacity: 1, height: '75vh'}} transition={{duration: 0.3, delay: 0}} className='projects-container w-11/12 sm:w-3/4'>
-            <ProjectBox onShow={() => setPokerVisibility(true)} 
+        :
+        <div id='My Projects' className='Projects-large'>
+          <div className='skills-large-container space-y-16'>
+            <motion.div initial={{opacity: 0, width: 0}} whileInView={{opacity: 1, width:'100%'}} transition={{duration: 0.3, delay: 0}} className='flex-container'>
+              <ProjectBox onShow={() => setPokerVisibility(true)} 
               image='poker.png' 
-              title='Poker Simulator'>
+              title='Poker Simulator'
+              isLarge={true}>
                 Skills used: Python
-            </ProjectBox>
-            <ProjectBox onShow={() => setWeatherVisibility(true)}
-            image='weather.jpeg' 
-            title='Weather App'>
-              Skills used: Swift, SwiftUI, XCode
-            </ProjectBox>
-           
-            <ProjectBox onShow={() => setLLLVisibility(true)}
-            image='LLL.png' 
-            title='Linked List Library'>
-              Skills used: Python
-            </ProjectBox>
-          </motion.div>
+              </ProjectBox>
+
+              <ProjectBox onShow={() => setWeatherVisibility(true)}
+              image='weather.jpeg' 
+              title='Weather App'
+              isLarge={true}>
+                Skills used: Swift, SwiftUI, XCode
+              </ProjectBox>
+            
+              <ProjectBox onShow={() => setLLLVisibility(true)}
+              image='LLL.png' 
+              title='Linked List Library'
+              isLarge={true}>
+                Skills used: Python
+              </ProjectBox>
+            </motion.div>
+            <div className='header-phone'>
+              <div className='header-container'>
+                <ProjectsHeader />
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      }   
  
-      <div id='Contact' className='Contact'>
+      <div id='Contact' className='Contact max-h-72 sm:max-h-96'>
         <div className='left pt-9 pl-5 w-2/5 sm:pl-8 sm:pt-12 sm:w-1/2 xl:pl-14'> 
           <ContactHeader />
           <motion.p initial={{x: -100, opacity: 0}} whileInView={{x: 0, opacity: 1}} className='mt-3 text-sm w-11/12 sm:w-3/5 sm:text-xl xl:text-2xl'>Have a cool project or question? Feel free to contact me.</motion.p>

@@ -15,7 +15,8 @@
   font-family: "Lato", "Montserrat", sans-serif;
   align-items: center;
   background: rgba(7, 20, 20, 0.7);
-  max-height: 500px;
+  border-radius: 10px;
+  max-width: 1000px;
 }
 
 .home-header div {

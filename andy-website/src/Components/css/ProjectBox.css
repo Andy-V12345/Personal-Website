@@ -8,9 +8,32 @@
     transition: 0.3s ease-in-out;
   }
 
-  #hover.projectbox {
+  .projectbox-large {
+    position: relative;
+    flex: 1;
     background-color: rgba(7,20,20, 0.6);
-    /* width: 50%; */
+    height: 500px;
+    max-width: 500px;
+    margin: 20px auto;
+    border-radius: 15px;
+    transition: 0.3s ease-in-out;
+
+  }
+
+  .projectbox-large:hover {
+    position: relative;
+    flex: 1;
+    background-color: rgba(7,20,20, 0.6);
+    height: 500px;
+    max-width: 500px;
+    margin: 20px auto;
+    border-radius: 15px;
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+  }
+
+  .projectbox:hover {
+    background-color: rgba(7,20,20, 0.6);
     border-radius: 10px;
     padding: 0;
     margin: 20px auto;
@@ -18,14 +41,39 @@
     transform: scale(1.05);
     transition: 0.3s ease-in-out;
   }
-  
+
+  .info-container-large {
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    top: 60%;
+    background-color: rgba(7,20,20,1);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+  .info-container-large div {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
   
   
   .projectbox h2 {
     color: #3DADAD;
   }
+
+  .projectbox-large h2 {
+    color: #3DADAD;
+  }
   
   .projectbox hr {
+    width: 70%;
+    margin: auto;
+  }
+
+  .projectbox-large hr {
     width: 70%;
     margin: auto;
   }
@@ -34,6 +82,12 @@
     margin: 10px 0;
     width: 100%;
     max-height: 50%;
+  }
+
+  .projectbox-large img {
+    position: absolute;
+    width: 100%;
+    border-radius: inherit;
   }
   
   .projectbox img {

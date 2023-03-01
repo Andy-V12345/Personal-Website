@@ -76,12 +76,6 @@ function Navbar({isFixed, hideNav, isPhoneNav}) {
                             </li>
                         ))}
                     </ul>
-                    {/* <motion.h1 initial={{color: "white"}} whileHover={{color: "black"}}>
-                        <a href='https://github.com/Andy-V12345' target='_blank'><FaGithub /></a>
-                    </motion.h1>
-                    <motion.h1 initial={{color: "white"}} whileHover={{color: "black"}} className="linkedInIcon">
-                        <a href='https://www.linkedin.com/in/andyvu2026/' target='_blank'><FaLinkedinIn /></a>
-                    </motion.h1> */}
                 </div>
             </motion.div>
         )

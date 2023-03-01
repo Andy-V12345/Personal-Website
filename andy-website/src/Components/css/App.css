@@ -21,8 +21,6 @@
   background-color: #3DADAD;
   border: none;
   color: white;
-  /* padding: 15px 25px; */
-  /* font-size: large; */
   font-weight: bold;
   border-radius: 10px;
   transition: .2s ease-in-out;
@@ -32,8 +30,6 @@
   background-color: #3DADAD;
   border: none;
   color: white;
-  /* padding: 15px 25px; */
-  /* font-size: large; */
   font-weight: bold;
   border-radius: 10px;
   transform: scale(1.1);
@@ -47,6 +43,10 @@
   height: 100vh;
   color: white;
   max-height: 800px;
+}
+
+.About.phone {
+  max-height: 700px;
 }
 
 .header {
@@ -74,6 +74,20 @@
   max-height: 1100px;
 }
 
+.Projects-large {
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
+  display: block;
+  color: white;
+  background-color: #213333;
+  max-height: 1000px;
+}
+
+.Projects.phone {
+  max-height: 900px;
+}
+
 .projects-container {
   background: rgba(133, 204, 204, 0.2);
   border-radius: 10px;
@@ -85,6 +99,7 @@
   padding-left: 0px;
   padding-right: 0px;
   max-width: 400px;
+  max-height: 900px;
 }
 
 
@@ -95,30 +110,23 @@
   background: rgba(7,20,20);
   color: white;
   overflow: hidden;
-  max-height: 370px;
 }
 
 
 .left {
-  /* width: 50%; */
   height: 100%;
   align-items: left;
   text-align: left;
-  /* padding-left: 30px; */
-  /* padding-top: 50px; */
 }
 
 .left p {
   max-width: 340px;
-  /* width: 60%; */
 }
 
 .right {
-  /* width: 50%; */
   height: 100%;
   align-items: right;
   text-align: right;
-  /* padding-right: 30px; */
 }
 
 
@@ -170,6 +178,7 @@
   display: block;
   color: white;
   background-color: #213333;
+  max-height: 800px;
 }
 
 .Skills-large {
@@ -179,15 +188,13 @@
   display: block;
   color: white;
   background-color: #213333;
-  max-height: 700px;
-  /* background-color: red; */
+  max-height: 600px;
 }
 
 .flex-container {
   display: flex;
   width: 100%;
   margin: 0 auto;
-  /* background-color: blue; */
   max-width: 1900px;
 }
 
@@ -204,7 +211,6 @@
   width: 100%;
   top: 50%;
   transform: translate(0, -50%);
-  /* background-color: green; */
 }
 
 
