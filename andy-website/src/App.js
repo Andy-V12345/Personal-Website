@@ -273,6 +273,12 @@ function App() {
 
       {isNavVisible ? <Navbar isFixed={true} hideNav={() => {setNavVisible(false); setNavCollapseVisible(true)}} isPhoneNav={(windowWidth <= 800) ? true : false}/> : null}
       {isNavCollapseVisible ? <NavCollapse hideNavCollapse={() => setNavCollapseVisible(false)} showNav={() => setNavVisible(true)} hideNav={() => setNavVisible(false)} isNavVisible={isNavVisible} isPhoneNav={(windowWidth <= 800) ? true : false}/> : null}
+      {/* {(windowWidth >= 500) ? 
+        <motion.div href='#Home' initial={{opacity: 0, right: -100}} animate={{opacity: 1, right: 25}} transition={{type: 'spring', duration: 0.4, delay: 0}} className='top-2 sm:top-7 md:top-7 lg:top-7 logo w-8 sm:w-11 md:w-12 xl:w-16'>
+          <img src="Andy-Website-Logo.svg" alt='logo' />
+        </motion.div>
+      :
+      null} */}
   
       <ProjectDescriptionBackground close={() => setPokerVisibility(false)} visible={isPokerVisible} />
 

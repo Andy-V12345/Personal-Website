@@ -71,7 +71,7 @@
   height: 100vh;
   background-color: #213333;
   color: white;
-  max-height: 1100px;
+  max-height: 900px;
 }
 
 .Projects-large {
@@ -99,7 +99,7 @@
   padding-left: 0px;
   padding-right: 0px;
   max-width: 400px;
-  max-height: 900px;
+  max-height: 700px;
 }
 
 
@@ -268,12 +268,23 @@
 
 
 .logo {
-  top: 12.5%;
-  left: 0;
-  position: absolute;
-  height: 75%;
+  height: 65px;
+  position: fixed;
+  padding: 0;
+  /* right: 25px; */
+  transition: 0.3s ease-in-out;
 }
 
+/* .logo:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease-in-out;
+}
+
+.logo img {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+} */
 
 
 
