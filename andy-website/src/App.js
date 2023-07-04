@@ -23,6 +23,7 @@ function App() {
   const [isWeatherVisible, setWeatherVisibility] = React.useState(() => false)
   const [isLLLVisible, setLLLVisibility] = React.useState(() => false)
   const [isNavVisible, setNavVisible] = React.useState(() => false)
+  const [isTodoVisible, setTodoVisibility] = React.useState(() => false)
   const [windowWidth, setWindowWidth] = React.useState(() => window.innerWidth)
   const [isNavCollapseVisible, setNavCollapseVisible] = React.useState(() => false)
 
@@ -125,7 +126,7 @@ function App() {
             <div className='header-phone'>
               <div className='header-container space-y-5 md:space-y-11'>
                 <SkillsHeader />
-                <BlueButton link='https://drive.google.com/file/d/1ZehCmz5QhYUrA66p4JbZd5qGr-Wjb5Wd/view?usp=sharing'>My Resume</BlueButton>
+                <BlueButton link='https://drive.google.com/file/d/1kE1tNo7-9QRdcuWHOD8Kzm3rWN-P4Pj9/view'>My Resume</BlueButton>
               </div>
             </div>
           </div>
@@ -155,7 +156,7 @@ function App() {
               <div className='header'>
                 <div className='header-container space-y-5 md:space-y-11'>
                   <SkillsHeader />
-                  <BlueButton link='https://drive.google.com/file/d/1ZehCmz5QhYUrA66p4JbZd5qGr-Wjb5Wd/view?usp=sharing'>My Resume</BlueButton>
+                  <BlueButton link='https://drive.google.com/file/d/1kE1tNo7-9QRdcuWHOD8Kzm3rWN-P4Pj9/view'>My Resume</BlueButton>
                 </div>
               </div>
             </div>
@@ -184,7 +185,7 @@ function App() {
             <div className='header-phone'>
               <div className='header-container space-y-5 md:space-y-11'>
                 <SkillsHeader />
-                <BlueButton link='https://drive.google.com/file/d/1ZehCmz5QhYUrA66p4JbZd5qGr-Wjb5Wd/view?usp=sharing'>My Resume</BlueButton>
+                <BlueButton link='https://drive.google.com/file/d/1kE1tNo7-9QRdcuWHOD8Kzm3rWN-P4Pj9/view'>My Resume</BlueButton>
               </div>
             </div>
           </div>
@@ -202,6 +203,14 @@ function App() {
           </div>
           <div className='right-container'>
             <motion.div initial={{opacity: 0, height: 0}} whileInView={{opacity: 1, height: '75vh'}} transition={{duration: 0.3, delay: 0}} className='projects-container w-11/12 sm:w-3/4'>
+
+              <ProjectBox onShow={() => setTodoVisibility(true)}
+                image="todoList.png"
+                title="Todo List"
+                isLarge={false}>
+                  Skills used: NextJS, AWS Amplify
+              </ProjectBox>
+
               <ProjectBox onShow={() => setPokerVisibility(true)} 
                 image='poker.png' 
                 title='Poker Simulator'
@@ -228,6 +237,14 @@ function App() {
         <div id='My Projects' className='Projects-large'>
           <div className='skills-large-container space-y-16'>
             <motion.div initial={{opacity: 0, width: 0}} whileInView={{opacity: 1, width:'100%'}} transition={{duration: 0.3, delay: 0}} className='flex-container'>
+              
+              <ProjectBox onShow={() => setTodoVisibility(true)}
+                  image="todoList.png"
+                  title="Todo List"
+                  isLarge={true}>
+                    Skills used: NextJS, AWS Amplify
+              </ProjectBox>
+              
               <ProjectBox onShow={() => setPokerVisibility(true)} 
               image='poker.png' 
               title='Poker Simulator'
@@ -273,19 +290,12 @@ function App() {
 
       {isNavVisible ? <Navbar isFixed={true} hideNav={() => {setNavVisible(false); setNavCollapseVisible(true)}} isPhoneNav={(windowWidth <= 800) ? true : false}/> : null}
       {isNavCollapseVisible ? <NavCollapse hideNavCollapse={() => setNavCollapseVisible(false)} showNav={() => setNavVisible(true)} hideNav={() => setNavVisible(false)} isNavVisible={isNavVisible} isPhoneNav={(windowWidth <= 800) ? true : false}/> : null}
-      {/* {(windowWidth >= 500) ? 
-        <motion.div href='#Home' initial={{opacity: 0, right: -100}} animate={{opacity: 1, right: 25}} transition={{type: 'spring', duration: 0.4, delay: 0}} className='top-2 sm:top-7 md:top-7 lg:top-7 logo w-8 sm:w-11 md:w-12 xl:w-16'>
-          <img src="Andy-Website-Logo.svg" alt='logo' />
-        </motion.div>
-      :
-      null} */}
   
       <ProjectDescriptionBackground close={() => setPokerVisibility(false)} visible={isPokerVisible} />
 
       <ProjectDescription isPhone={(windowWidth < 500)} title='Poker Simulator' link='https://github.com/Andy-V12345/Poker' image='poker.png' visible={isPokerVisible} close={() => setPokerVisibility(false)}>
         Developed a fully functional text-based poker program in python that allows the user to play against 
         the computer using the terminal. The picture to the left is what the user would see in the middle of a round of poker.
-        I'm currently updating the program to add two more computer players to the game.
       </ProjectDescription>
 
       <ProjectDescriptionBackground close={() => setWeatherVisibility(false)} visible={isWeatherVisible} />
@@ -302,6 +312,14 @@ function App() {
         Developed a Python library that provides 6 useful functionalities to linked lists. The library allows users to create a 
         linked list from a normal list; more conveniently access, replace, insert and delete data from a linked list; and obtain
         the length of the linked list.
+      </ProjectDescription>
+
+      <ProjectDescriptionBackground close={() => setTodoVisibility(false)} visible={isTodoVisible} />
+
+      <ProjectDescription isPhone={(windowWidth < 500)} title='Todo List Website' link='https://github.com/Andy-V12345/Todo_List' image='todoList.png' visible={isTodoVisible} close={() => setTodoVisibility(false)}>
+        Developed and deployed a todo list website that uses the NextJS framework for the frontend and AWS Amplify for the backend.
+        Implemented a sign-in and sign-up feature using AWS Cognito and the Authentication library. Utilized GraphQL API to fetch and update
+        data from Amazon's DynamoDB.
       </ProjectDescription>
 
 
