@@ -185,7 +185,7 @@ function App() {
             <div className='header-phone'>
               <div className='header-container space-y-5 md:space-y-11'>
                 <SkillsHeader />
-                <BlueButton link='https://drive.google.com/file/d/1kE1tNo7-9QRdcuWHOD8Kzm3rWN-P4Pj9/view'>My Resume</BlueButton>
+                <BlueButton link='https://drive.google.com/file/d/1svm-gfcwrK95YBxoleACdLJmafOeBDFF/view?usp=sharing'>My Resume</BlueButton>
               </div>
             </div>
           </div>
