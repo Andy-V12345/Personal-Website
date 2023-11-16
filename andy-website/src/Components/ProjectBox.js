@@ -7,7 +7,7 @@ function ProjectBox({image, title, children, onShow, isLarge}) {
     if (isLarge) {
         return (
             <div onClick={onShow} 
-                className='projectbox-large w-10/12'
+                className='projectbox-large'
             >
                 <img src={image} alt='project image' />
 

@@ -89,7 +89,7 @@ function App() {
           <div className='about-txt text-sm sm:text-base md:text-xl lg:text-2xl'>
             <div>
               <motion.p initial={{x: 100, opacity: 0}} whileInView={{x: 0, opacity: 1}} transition={{type: "spring", delay: 0, duration: 0.4}}>
-                I'm a freshman <strong>computer science</strong> student at Northwestern University. My <strong>goal </strong> 
+                I'm a <strong>computer science</strong> student at Northwestern University. My <strong>goal </strong> 
                 is to develop <strong>impactful</strong> software that is <strong>optimized</strong> to its fullest potential.
               </motion.p>
             </div>
@@ -126,7 +126,7 @@ function App() {
             <div className='header-phone'>
               <div className='header-container space-y-5 md:space-y-11'>
                 <SkillsHeader />
-                <BlueButton link='https://drive.google.com/file/d/1kE1tNo7-9QRdcuWHOD8Kzm3rWN-P4Pj9/view'>My Resume</BlueButton>
+                <BlueButton link='https://drive.google.com/file/d/1al55sNN-kTDEORQeqc9t08ZLJ_GP6I14/view?usp=sharing'>My Resume</BlueButton>
               </div>
             </div>
           </div>
@@ -156,7 +156,7 @@ function App() {
               <div className='header'>
                 <div className='header-container space-y-5 md:space-y-11'>
                   <SkillsHeader />
-                  <BlueButton link='https://drive.google.com/file/d/1kE1tNo7-9QRdcuWHOD8Kzm3rWN-P4Pj9/view'>My Resume</BlueButton>
+                  <BlueButton link='https://drive.google.com/file/d/1al55sNN-kTDEORQeqc9t08ZLJ_GP6I14/view?usp=sharing'>My Resume</BlueButton>
                 </div>
               </div>
             </div>
@@ -185,7 +185,7 @@ function App() {
             <div className='header-phone'>
               <div className='header-container space-y-5 md:space-y-11'>
                 <SkillsHeader />
-                <BlueButton link='https://drive.google.com/file/d/1svm-gfcwrK95YBxoleACdLJmafOeBDFF/view?usp=sharing'>My Resume</BlueButton>
+                <BlueButton link='https://drive.google.com/file/d/1al55sNN-kTDEORQeqc9t08ZLJ_GP6I14/view?usp=sharing'>My Resume</BlueButton>
               </div>
             </div>
           </div>
